@@ -1,6 +1,11 @@
 package teama;
 
-
+/**
+ * For testing purposes try to add a new method
+ * with your name and call it in main, 
+ * so we all know it works.
+ *
+ */
 public class test {
 
 	/**

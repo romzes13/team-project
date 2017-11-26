@@ -20,12 +20,17 @@ public class test {
 		System.out.println("Hello, I'm Dan!");
 	}
 	
+	public static void helloThomas() {
+		
+		System.out.println("Howdy, I'm Tom!");	
+	}
+	
 	
 	public static void main(String[] args) {
 		
-
 		helloRoman();
 		helloDan();
+		helloThomas();
 		
 	}
 

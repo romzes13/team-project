@@ -16,14 +16,16 @@ public class test {
 		System.out.println("Hello, I'm Roman =)");
 	}
 	
-	
+	public static void helloDan() {
+		System.out.println("Hello, I'm Dan!");
+	}
 	
 	
 	public static void main(String[] args) {
 		
 
 		helloRoman();
-		
+		helloDan();
 		
 	}
 

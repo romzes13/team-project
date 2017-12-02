@@ -13,13 +13,13 @@ public interface Evaluation {
 	 * @param name
 	 * @return Customer information.
 	 */
-	public Customer lookUpCustomer(String name);
+	public Customer lookUpCustomer(String lastName, String firstName);
 	
 	/**
 	 * Calculates customer rating by provided name.
 	 * @return Customer rating.
 	 */
-	public int countCustomerRating(String name);
+	public int countCustomerRating(String lastName, String firstName);
 	
 	/**
 	 * Look up product by name.

@@ -26,6 +26,10 @@ public class test {
 		
 		System.out.println("Howdy, I'm Tom!");	
 	}
+	
+	public static void helloFrank() {
+		System.out.println("Hello, I'm Frank!!");
+	}
 
 	
 	
@@ -34,6 +38,7 @@ public class test {
 		helloRoman();
 		helloDan();
 		helloThomas();
+		helloFrank();
 
 		
 	}

@@ -9,5 +9,6 @@ public class Sandbox {
         Customer customer = new Customer("John", "Doe");
         Node node = new Node(customer.getFirstName(), customer.getLastName);
         node.displayNode();
+        
     }
 }

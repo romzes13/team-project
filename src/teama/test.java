@@ -28,7 +28,7 @@ public class test {
 	}
 	
 	public static void helloFrank() {
-		System.out.println("Hello, I'm Frank!!");
+		System.out.println("Hello, I'm Frank!");
 	}
 
 	

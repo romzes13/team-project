@@ -1,0 +1,466 @@
+apple,  $49
+basket, $43
+bath, $2
+bed, $17
+bee, $21
+berry, $39
+bird, $19
+blade, $48
+book, $11
+boot, $47
+bottle, $50
+car brake, $48
+brush, $15
+bucket, $41
+bulb, $29
+button, $17
+goat cheese, $49
+coat, $39
+collar, $12
+comb, $6
+hammer, $33
+hat, $46
+fishing hook, $25
+car horn, $9
+key ring, $44
+kitchen knife,  $50
+plastic bags, $16
+needles, $1
+parcel, $45
+pencil,  $21
+ring,  $5
+roofing, $26
+scissors,  $16
+whistle, $18
+window, $24
+TV,  $1
+Phone,  $43
+Picture Frame,  $7
+Bed,  $3
+Couch,  $4
+Table,  $17
+Chair,  $31
+Candle,  $36
+Lamp,  $30
+Cup, $34
+Flower,  $32
+Clock,  $45
+Paper,  $39
+Box,  $21
+Chapter Book,  $20
+CD, $45
+fork,  $18
+spoon,  $22
+knife,  $14
+plate,  $48
+bowl,  $4
+toothpaste,  $37
+shampoo,  $7
+conditioner,  $50
+mirror,  $45
+keys,  $24
+wallet,  $21
+purse,  $30
+shirt,  $30
+pants,  $43
+shoes, $29
+computer,  $37
+mp3 player,  $41
+video games,  $29
+cars,  $10
+trucks,  $1
+street lights, $40
+condensed milk, $21
+cheddar cheese, $7
+thyme, $32
+pepper, $49
+mushrooms, $1
+prosciutto, $31
+hoisin sauce, $27
+mesclun greens, $42
+tortillas, $7
+cider vinegar, $12
+duck, $35
+cantaloupes, $48
+onions, $2
+olives, $40
+shitakes, $4
+gorgonzola, $28
+blue cheese, $48
+bean sauce, $27
+parsley, $20
+Marsala, $23
+strawberries, $32
+snap peas, $42
+sweet peppers, $30
+apple butter, $38
+borscht, $34
+hamburger, $21
+brunoise, $7
+brussels sprouts, $38
+almond paste, $39
+quail, $12
+plum tomatoes, $11
+beets, $30
+spinach, $41
+pancetta, $19
+pork, $32
+remoulade, $35
+cucumbers, $29
+arugula, $23
+cloves, $34
+cookies, $12
+cream cheese, $42
+chestnuts, $49
+horseradish, $21
+pomegranates, $47
+tomato paste, $7
+vinegar, $24
+truffles, $2
+water, $42
+tarragon, $10
+mushrooms, $38
+cannellini beans, $11
+prawns, $47
+buttermilk, $39
+bagels, $29
+pesto, $8
+chocolate, $27
+navy beans, $14
+scallops, $2
+macaroni, $45
+clams, $29
+fennel seeds, $4
+Havarti cheese, $4
+marshmallows, $1
+spaghetti squash, $16
+coconuts, $31
+plums, $26
+dates, $18
+swiss cheese, $44
+garlic, $2
+salmon, $9
+yogurt, $1
+truffles, $12
+peas, $5
+bass, $19
+tomatoes, $13
+fish sauce, $22
+angelica, $47
+cornstarch, $25
+marshmallows, $47
+mint, $8
+pancetta, $21
+grapes, $48
+huckleberries, $46
+radishes, $21
+dates, $3
+cinnamon, $3
+brown rice, $2
+tofu, $33
+balsamic vinegar, $31
+Parmesan cheese, $15
+mustard, $20
+bean threads, $24
+coconuts, $8
+five-spice powder, $19
+pink beans, $27
+brunoise, $17
+lettuce, $8
+pool stick, $18
+boom box, $34
+video games, $33
+blanket, $24
+shirt, $12
+perfume, $25
+brocolli, $29
+cat, $42
+shovel, $17
+hair tie, $32
+truck, $11
+glasses, $28
+canvas, $20
+tooth picks, $44
+plastic fork, $37
+stockings, $45
+conditioner, $33
+chair, $1
+twister, $4
+fork, $2
+rubber band, $47
+mp3 player, $2
+outlet, $25
+pencil, $20
+soap, $24
+house, $30
+bookmark, $10
+money, $32
+eraser, $14
+blouse, $16
+toilet, $9
+flag, $22
+pen, $38
+vase, $28
+sailboat, $5
+fridge, $33
+pants, $2
+floor, $8
+thermometer, $43
+clothes, $20
+candle, $14
+doll, $14
+spring, $16
+coasters, $23
+soy sauce packet, $10
+sand paper, $4
+bottle cap, $38
+mouse pad, $20
+slipper, $2
+keyboard, $20
+lamp, $34
+monitor, $27
+speakers, $13
+water bottle, $28
+white out, $8
+sidewalk, $31
+grid paper, $15
+milk, $42
+sandal, $16
+paint brush, $19
+paper, $18
+shoes, $12
+street lights, $3
+television, $7
+playing card, $27
+packing peanuts, $2
+toe ring, $17
+remote, $23
+knife, $30
+wallet, $20
+magnet, $47
+charger, $31
+toothpaste, $36
+fake flowers, $30
+cinder block, $50
+desk, $21
+leg warmers, $1
+model car, $28
+USB drive, $36
+clock, $35
+drawer, $16
+sharpie, $4
+tissue box, $13
+bowl, $38
+ice cube tray, $36
+screw, $19
+piano, $26
+shawl, $13
+bed, $3
+shampoo, $39
+tire swing, $39
+window, $38
+headphones, $33
+food, $30
+nail clippers, $45
+cork, $28
+chocolate, $23
+bread, $29
+twezzers, $43
+All-purpose cleaner, $36
+Oven cleaner,  $24
+Stainless steel cleaner, $23
+Scrubbing sponges, $39
+Microfiber cloths, $8
+Baking soda, $8
+Glass cleaner, $16
+Lint roller, $44
+Extendable duster, $23
+Vacuum, $34
+Digital pet, $38
+Entertainment robot, $2
+Robot dog, $14
+Robot kit, $16
+USB toy, $5
+Barrel O' Monkeys, $11
+Battleship, $32
+Candy Land, $15
+Chutes and Ladders, $40
+Clue, $31
+Connect Four, $21
+Dominoes, $11
+Dungeons & Dragons, $31
+Game Boy, $37
+Hungry Hungry Hippos, $26
+Life, $6
+Mad Libs, $27
+Mattel Auto Race, $28
+Monopoly, $2
+Mouse Trap, $23
+Nintendo Entertainment System, $28
+Operation, $10
+Pong, $9
+Pretty Pretty Princess, $47
+Risk, $2
+Rock 'Em Sock 'Em Robots, $22
+Scrabble, $17
+Simon, $7
+Sorry!, $14
+Trivial Pursuit, $18
+Twister, $10
+Uno, $45
+Xbox, $35
+fog machine,  $44
+jelly,  $12
+Writing pads, $27
+Post–it notes, $32
+Phone message pads, $22
+Laser printer paper, $25
+Copy paper, $48
+Fax paper, $47
+Graph paper, $17
+Colored paper, $27
+Pocket notebook, $50
+Hanging file folders, $32
+Pocket folders, $28
+File labels, $29
+Index dividers, $11
+Tabs, $35
+Guitar, $15
+3.5" high density disks, $29
+CD–Roms, $14
+Zip drive tapes, $4
+Price tags, $40
+Name badges, $34
+Labels, $24
+Color coding labels, $16
+Trekking poles, $18
+Child carrier, $44
+Rolling jogger, $31
+Folding chairs, $28
+Folding table, $17
+Cots, $22
+hammer, $20
+Headlamps, $3
+Flashlights, $12
+Lantern, $30
+Lantern fuel or batteries, $9
+Water filter or treatment tablets, $25
+Bike, $45
+Bike trailers, $44
+Inflatable boat with paddles, $43
+Fishing gear, $16
+kayaking gear, $16
+Sun-shielding hats, $46
+Swimsuits, $23
+Stove, $43
+Windscreen, $8
+Fuel, $15
+Fuel bottle with fuel funnel, $41
+Matches, $1
+Toilet paper, $21
+Sunscreen, $29
+Lip balm, $11
+Insect repellent, $3
+Hand sanitizer, $4
+Alcohol wipes, $39
+Spare eyeglasses, $24
+Mirror, $5
+First-aid kit, $44
+Two-way radios, $6
+GPS receiver, $27
+Playing cards, $46
+Rolling ice cream maker, $9
+Kick-around foot bag, $46
+Kite, $22
+Boomerang, $44
+Pruners, $13
+Dutch Hoe, $36
+Pruning Saw, $29
+Shears, $37
+Lawn Mower, $16
+Garden Hose, $37
+Graphics card, $28
+computer case, $33
+led keyboard,  $3
+iPhone, $27
+working desk, $35
+foldable table,  $4
+backpack,  $28
+dryer sheets, $42
+wine opener, $16
+febreeze, $49
+canned fruit, $15
+crickets,  $50
+neck pillow,  $7
+face wipes,  $22
+lip balm,  $40
+safety pins, $19
+bobby pins,  $5
+scarf,  $15
+tape,  $1
+ziploc bags,  $21
+plastic utensils, $38
+flip flops, $12
+Cement render, $36
+Ceramic tile,  $22
+quarry tile,  $33
+pavers,  $9
+mosaic, $42
+Dropped ceiling, $1
+coffered ceiling, $49
+wide plank,  $32
+terrazzo,  $9
+carpet, $37
+Marble, $33
+Wall covering,  $1
+wallpaper,  $16
+acoustic guitar, $4
+Paint,  $14
+wood stain,  $4
+faux finishing, $32
+Staff stone, $47
+Stucco, $1
+Wood finishing, $48
+rebar,  $28
+wire rope,  $36
+screws, $40
+nails, $42
+bidet, $35
+bamboo plant, $42
+bamboo, $27
+bamboo stick, $33
+curtain, $23
+bay window, $41
+smoke detector, $1
+double A batteries, $28
+triple A batteries, $46
+playstation 2, $6
+nintendo 64, $48
+sonic plush, $3
+steel mesh,  $22
+sand, $48
+hourglass, $15
+asphalt, $39
+Roof Shingles, $49
+Roof Panels, $46
+Metal Roofing, $28
+Roof Ventilation, $2
+Gutters, $40
+Insulation, $7
+Fiberglass Insulation, $49
+Rigid Insulation, $6
+Blow-In Insulation, $12
+Radiant Barrier, $39
+Foam Insulation, $39
+nuts, $40
+bolts, $27
+pecans, $3
+drill gun, $18
+nail gun, $12
+nail polish, $21
+lipstick, $3
+allen wrench, $22
+foaming face wash, $33
+acne wash, $42
+rags, $46
+washcloth, $19

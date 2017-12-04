@@ -23,6 +23,9 @@ public class Customer {
 		this.lastName  = lastName;
 		rank = 0;
 		
+		/*Testing, still messing with git :)
+		Right now I see the constructor take in two strings, 
+		method to randomize the two strings needed*/
 	}
 
 	/**

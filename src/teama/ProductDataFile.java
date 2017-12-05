@@ -63,8 +63,8 @@ public class ProductDataFile {
 	         System.exit(1);
 	     }
 
-	// Getting the new ArrayList
-	public ArrayList<Product> getList() {
+	// Getting the new ArrayList 
+	public ArrayList<Product> getPList() {
 		return pList;
 	}
 

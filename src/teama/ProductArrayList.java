@@ -15,7 +15,7 @@ import teama.Product;
  * @author Thomas
  *  */
 
-public class ProductArrayList Evaluation{
+public class ProductArrayList implements Evaluation{
 	
 	//The actual reference that holds the data file and ArrayList of Products
 	

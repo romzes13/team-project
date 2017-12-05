@@ -13,17 +13,19 @@ public class Tree implements Evaluation {
     root = null;
   }
   
+	// TODO: populate tree with customers and products
+	
   /**
 	 * Look up customer by name.
 	 * @param name
 	 * @return Customer information.
 	 */
 	public Customer lookUpCustomer(String lastName, String firstName) {
-        Node current = root; 
-        while(current.lastName != lastName) {
-          if(lastName.charAt(0).compareTo(current.lastName.charAt(0)) < 0
-            || lastName.charAt(0).compareTo(current.lastName.charAt(0)) > 0) {
-            current = current.child;
+		Node current = root; 
+		while(current.lastName != lastName) {
+		  if(lastName.compareTo(current.lastName) < 0
+		    || lastName.compareTo(current.lastName) > 0) {
+		    current = current.child;
         }
         return current;
     }
@@ -32,8 +34,32 @@ public class Tree implements Evaluation {
 	 * Calculates customer rating by provided name.
 	 * @return Customer rating.
 	 */
-	public int countCustomerRating(String name) {
-    
+	public int countCustomerRating(String lastName, String firstName, int rank) {
+		Node current = root;
+		Node currentRank;
+		/*
+		* While the lastName being searched for does not match current node's lastName, 
+		* keep moving down the tree until there is a match
+		*/
+		while(current.lastName != lastName) {
+		  if(lastName.compareTo(current.lastName) < 0
+		    || lastName.compareTo(current.lastName) > 0) {
+		    current = current.child;		  // current becomes firstName
+        	}
+			
+		/*
+		* While the firstName being searched for does not match current node's firstName, 
+		* keep moving down the tree until there is a match
+		*/
+		while(current.firstName ! = firstName) {
+			if(firstName.compareTo(current.firstName) < 0
+		     	|| firstName.compareTo(current.firstName) > 0) {
+			  current = current.child;	// current node becomes rank
+			  currentRank = current.rank; // found rank
+		  	}
+		}
+        return current;
+	return currentRank;
     }
 	
 	/**
@@ -41,8 +67,42 @@ public class Tree implements Evaluation {
 	 * @param name
 	 * @return Product information.
 	 */
-	public Product lookUpProduct(String name) {
-    
+	public Product lookUpProduct(String lastName, String firstName, String productName) {
+    		Node current = root;
+		Node currentProduct;
+		/*
+		* While the lastName being searched for does not match current node's lastName, 
+		* keep moving down the tree until there is a match
+		*/
+		while(current.lastName != lastName) {
+		  if(lastName.compareTo(current.lastName) < 0
+		    || lastName.compareTo(current.lastName) > 0) {
+		    current = current.child;		  // current becomes firstName
+        	}
+			
+		/*
+		* While the firstName being searched for does not match current node's firstName, 
+		* keep moving down the tree until there is a match
+		*/
+		while(current.firstName ! = firstName) {
+			if(firstName.compareTo(current.firstName) < 0
+		     	|| firstName.compareTo(current.firstName) > 0) {
+			  current = current.child;	// current node becomes rank
+			  currentRank = current.rank; // found rank
+		  	}
+		}
+			
+		/*
+		* While the firstName being searched for does not match current node's firstName, 
+		* keep moving down the tree until there is a match
+		*/
+		while(current.productName ! = productName) {
+			if(productName.compareTo(current.productName) < 0
+		     	|| productName.compareTo(current.productName) > 0) {
+			  current = current.child;	// current node becomes 
+			  currentProduct = current.name; // found rank
+		  	}
+		}
     }
 	
 	/**

@@ -38,7 +38,7 @@ public class CustomerArrayList  implements Evaluation{
 	 * TODO Check if list is empty first.
 	 * 
 	 */
-	@Override
+	
 	public Customer lookUpCustomer(String name) {
 		System.out.println("Looking up: " + name + " from " + listOfCustomers.size() + " names");
 		for(Customer c : listOfCustomers) {
@@ -49,7 +49,7 @@ public class CustomerArrayList  implements Evaluation{
 		return null;
 	}
 
-	@Override
+	
 	/**
 	 * Count customer rating from purchase history.
 	 */
@@ -104,6 +104,22 @@ public class CustomerArrayList  implements Evaluation{
 	
 	public ArrayList<Customer> getListOfCustomers() {
 		return listOfCustomers;
+	}
+
+
+
+	@Override
+	public Customer lookUpCustomer(String lastName, String firstName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	@Override
+	public int countCustomerRating(String lastName, String firstName) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 

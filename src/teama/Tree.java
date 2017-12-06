@@ -7,6 +7,7 @@
 public class Tree implements Evaluation {
   
   private Node root;
+  private CustomerArrayList customers;
   
   /* Constructor */
   public Tree() {
@@ -110,7 +111,7 @@ public class Tree implements Evaluation {
 	 * @return Average rating.
 	 */
 	public double averageRating() {
-    
+    		return customers.averageRating();
     }
 	
 	/**

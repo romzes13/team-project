@@ -29,10 +29,10 @@ public class ProductDataFile {
 		String split = ",";
 		
 		//For consistency sake, I'll keep the same format from CustomersData class
-		//By defualt I'll put the product quantity set to 1. 
+		//By default I'll put the product quantity set to 1. The product ID is in ascending order.
 		
 		int quan = 1;
-		
+		int id = 1;         
 		try
 		{
 		BufferedReader br = new BufferedReader(new FileReader("products.txt")); 
@@ -52,8 +52,8 @@ public class ProductDataFile {
 			double price;
 			
 			price = Double.parseDouble(product[1].replace("$", ""));  
-			pList.add(new Product(product[0], price, quan));
-			
+			pList.add(new Product(product[0], price, quan, id));
+			id++;
 		} 
 	
 		//pList = list;			//May not work (TODO) You already have pList.

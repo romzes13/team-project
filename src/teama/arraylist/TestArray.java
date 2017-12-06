@@ -85,8 +85,8 @@ public class TestArray {
 		CustomerArrayList caList = new CustomerArrayList();
 		// This arrayList has arrayList methods.
 		ArrayList<Customer> custListAr = caList.getListOfCustomers();
-		
 		caList.setAllRatings();
+		caList.shuffleList();
 		
 		System.out.println("Average rating: " + caList.averageRating());
 		//TODO Fix lookUpCustomer method or way o save last name without commas

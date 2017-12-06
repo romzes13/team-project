@@ -1,6 +1,7 @@
 package teama.arraylist;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import teama.Customer;
 import teama.Evaluation;
@@ -120,6 +121,13 @@ public class CustomerArrayList  implements Evaluation{
 	public int countCustomerRating(String lastName, String firstName) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+	
+	//Added method to Shuffle the list in random order.
+	
+	public ArrayList<Customer> shuffleList() {
+		Collections.shuffle(listOfCustomers);
+		return listOfCustomers;
 	}
 	
 

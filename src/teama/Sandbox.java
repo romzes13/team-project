@@ -1,14 +1,30 @@
 package teama;
 
+import java.util.ArrayList;
+
+import teama.arraylist.CustomerArrayList;
+
 /**
  * Sandbox for testing class methods
  */
 public class Sandbox {
     
     public static void main(String[] args){
-        Customer customer = new Customer("John", "Doe");
-        Node node = new Node(customer.getFirstName(), customer.getLastName());
-        node.displayNode();
-        
+    	
+    	long before = System.currentTimeMillis();
+    	
+    	CustomerArrayList caList = new CustomerArrayList();
+    	caList.shuffleList();
+		ArrayList<Customer> custListAr = caList.getListOfCustomers();
+		
+		
+		for(Customer c : custListAr) {
+			System.out.println(c.toString());
+			
+		}
+		
+		long after = System.currentTimeMillis();
+		System.out.println("Time taken: " + (after - before) + " milliseconds\n");
+    	
     }
 }

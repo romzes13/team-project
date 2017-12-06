@@ -25,12 +25,15 @@ public class CustomersDataFile {
 		list = new ArrayList<Customer>();
 		     
 		String line = " ";
-        String cvsSplitBy = ",";
+        String cvsSplitBy = ", ";
 		    
 		     try
 		       {
 		           BufferedReader br = new BufferedReader(new FileReader("names.csv"));
 
+		           // Skipping first line because it doesn't have a name
+		           line = br.readLine();
+		           
 		           while ((line = br.readLine()) != null)
 		           {
 		               
@@ -39,8 +42,10 @@ public class CustomersDataFile {
 		               
 		               
 		             //list.add(new Customer(firstName, lastName));
-		             list.add(new Customer(name[1], name[0]));
-		             
+		               
+		               name[1]= name[1].substring(0, name[1].indexOf(" "));
+		               
+		             list.add(new Customer(name[1], name[0]));		             
 		              
 		           }
 		           

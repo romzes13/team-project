@@ -1,14 +1,16 @@
+package teama;
+
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
-
-import teams.Product;
+import teama.Product;
 
 /*Similar to the CustomersDataFile, this class will read data 
  * from file and create an ArrayList of Products.
  * - Thomas
+ *  Updated: Roman
  */
 
 public class ProductDataFile {
@@ -16,10 +18,10 @@ public class ProductDataFile {
 	private ArrayList<Product> pList;
 
 	// Constructor
-	public ProductDataFile
+	public ProductDataFile()
 	{
 		
-		list = new ArrayList<Product>; 
+		pList = new ArrayList<Product>(); 
 		
 		//I believe these are still needed despite the txt being slightly different
 		
@@ -47,11 +49,15 @@ public class ProductDataFile {
 			
 			//NOTE (TODO); I am unable to compile right now, this may not work because
 			//price's filed in the Product class is initialized to a double. 
-			list.add(new Product(product[0], product[1], quan));
+			double price;
+			
+			price = Double.parseDouble(product[1].replace("$", ""));  
+			pList.add(new Product(product[0], price, quan));
 			
 		} 
 	
-		pList = list;			//May not work (TODO)
+		//pList = list;			//May not work (TODO) You already have pList.
+		
 		br.close();
 		}
 		 catch (FileNotFoundException f)
@@ -63,9 +69,12 @@ public class ProductDataFile {
 	         System.exit(1);
 	     }
 
-	// Getting the new ArrayList 
-	public ArrayList<Product> getPList() {
-		return pList;
-	}
+	
+
+}
+		// Getting the new ArrayList 
+		public ArrayList<Product> getPList() {
+			return pList;
+		}
 
 }

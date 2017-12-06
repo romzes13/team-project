@@ -5,6 +5,7 @@ import java.util.LinkedList;
 
 import teama.Customer;
 import teama.Product;
+import teama.ProductArrayList;
 /**
  * TestArray class tests implemented methods from CustomerArrayList.
  * 
@@ -91,8 +92,26 @@ public class TestArray {
 		//TODO Fix lookUpCustomer method or way o save last name without commas
 		System.out.println("Look up customer with name: " + caList.lookUpCustomer("kelly"));
 		
-		System.out.println("Random name: " + custListAr.get(11111).getLastName() + " " 
-					+ custListAr.get(11111).getFirstName() + " and rank = " + custListAr.get(11111).getRank());
+		//
+		System.out.println("First name: =" + custListAr.get(0).toString());
+		
+		
+		// Get the random number from 0 to array.sizi()
+		int randomNumber = ((int )(Math.random() * custListAr.size()));
+		System.out.println("Random number = " + randomNumber);
+		System.out.println("Random name: =" + custListAr.get(randomNumber).getLastName() + "==" 
+					+ custListAr.get(randomNumber).getFirstName() + "= and rank = " + custListAr.get(randomNumber).getRank());
+		
+		/**
+		 * Testing Products
+		 */
+		
+		ProductArrayList paList = new ProductArrayList();
+		ArrayList<Product> productList = paList.getListOfProducts();
+		
+		System.out.println(" Products total = " + productList.size());
+		System.out.println(" Products: " + paList.lookUpItemPrice("box"));
+		System.out.println(" Product #155  " + productList.get(155).toString());
 		
 	
 		

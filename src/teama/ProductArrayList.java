@@ -1,5 +1,5 @@
 
-package teama.arraylist;
+package teama;
 
 import java.util.ArrayList;
 
@@ -35,9 +35,9 @@ public class ProductArrayList implements Evaluation{
 	//if so return the item. If not, "No product has been found."
 	
 	public Product lookUpProduct(String item) {
-		System.out.println("Looking up: " + item + " from" productList.size() + " products");
+		System.out.println("Looking up: " + item + " from" + productList.size() + " products");
 		for(Product p : productList) {
-		if(p.getName().equalsIgnoreCase(name))
+		if(p.getName().equalsIgnoreCase(item))
 			return p;	
 		}
 
@@ -47,18 +47,45 @@ public class ProductArrayList implements Evaluation{
 	}
 	
 	//Look up an item in the .txt file and return the price of it
-	public Product lookUpItemPrice(String item) {
+	public double lookUpItemPrice(String item) {
 	 	System.out.println("Looking up the price for: "  + item);
 		for(Product p : productList) {
-		if(p.getName().equalsIgnoreCase(name))
-			return getPrice;			// TODO - fix the price both here and in ProductData class,
+		if(p.getName().equalsIgnoreCase(item))
+			// 
+			return p.getPrice();			// TODO - fix the price both here and in ProductData class,
 										// may require modification in the Product class itself
 
 		}
+		return 0;
+	}
 		
 		//return the whole lift of Products.
-		public Product getListOfProducts() {
+		public ArrayList<Product> getListOfProducts() {
 			return productList;
+		}
+
+		@Override
+		public Customer lookUpCustomer(String lastName, String firstName) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public int countCustomerRating(String lastName, String firstName) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+
+		@Override
+		public double averageRating() {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+
+		@Override
+		public void countAllRatings() {
+			// TODO Auto-generated method stub
+			
 		}
 
 		/*Logic to check if list is null:

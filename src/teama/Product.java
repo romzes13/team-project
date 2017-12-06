@@ -9,6 +9,7 @@ public class Product {
 	private String name;
 	private double price;
 	private int	   quantity;
+	private int productId;
 	
 	
 	public Product() {
@@ -16,11 +17,12 @@ public class Product {
 	}
 	
 	// Product constructor
-	public Product(String name, double price, int quantity) {
+	public Product(String name, double price, int quantity, int id) {
 		
 		this.name = name;
 		this.price = price;
 		this.quantity = quantity;
+		this.productId = id;
 		
 	}
 
@@ -46,6 +48,13 @@ public class Product {
 
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+	
+	public void setId(int id) {
+		this.productId = id;
+	}
+	public int getId() {
+		return productId;
 	}
 
 	@Override

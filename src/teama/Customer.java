@@ -1,5 +1,7 @@
 package teama;
 
+import com.sun.xml.internal.ws.util.StringUtils;
+
 /**
  * Customer class defines customer object.
  * 
@@ -59,7 +61,7 @@ public class Customer {
 
 	@Override
 	public String toString() {
-		return "Customer name= " + firstName + ", last name=" + lastName + ", rank=" + rank + "]";
+		return "Customer name: " + StringUtils.capitalize(firstName) + ", last name: " + StringUtils.capitalize(lastName) + ", rank = " + rank + "]";
 	}
 	
 	

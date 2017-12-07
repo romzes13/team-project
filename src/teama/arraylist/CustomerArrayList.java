@@ -63,7 +63,7 @@ public class CustomerArrayList implements Evaluation {
 
 			// Generating random number of Nodes to be inserted
 			// from 0 to 20 purchases
-			int randomTotal = ((int) (Math.random() * 20));
+			int randomTotal = ((int) (Math.random() * 30));
 
 			for (int j = 0; j < randomTotal; j++)
 
@@ -120,10 +120,47 @@ public class CustomerArrayList implements Evaluation {
 						
 		}    
 		
+		if(total <=  0) {
+			listOfCustomers.get(customer).setRank(0);
+			System.out.println("Customer rank is: unranked");
+		}
+		
+		if(total > 0 && total < 150) {
+			listOfCustomers.get(customer).setRank(1);
+			System.out.println("Customer rank is: level 1");
+		}
+		
+		if(total >= 150 && total < 300) {
+			listOfCustomers.get(customer).setRank(2);
+			System.out.println("Customer rank is: level 2");
+		}
+		
+		if(total >= 300 && total < 450) {
+			listOfCustomers.get(customer).setRank(3);
+			System.out.println("Customer rank is: level 3");
+		}
+		
+		if(total >= 450 && total < 600) {
+			listOfCustomers.get(customer).setRank(4);
+			System.out.println("Customer rank is: level 4");
+		}
+		
+		if(total >= 600 && total < 750) {
+			listOfCustomers.get(customer).setRank(5);
+			System.out.println("Customer rank is: level 5");
+		}
+		
+		if(total >= 750) {
+			listOfCustomers.get(customer).setRank(6);
+			System.out.println("Customer rank is: level 6, Master rank");
+		}
+		
 		//Print and return total
-		System.out.println("$" + total);
+		System.out.println("$" + total + " total spent");
 		return total;
 	}
+	
+
 
 	/**
 	 * Implemented methods from Evaluation:

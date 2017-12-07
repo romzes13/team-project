@@ -14,11 +14,14 @@ public class Sandbox {
     	//Testing some methods on shuffling and displaying the customers. Feel free to delete if needed. 
     	long before = System.currentTimeMillis();
     	
-    	ProductArrayList pl = new ProductArrayList();
-    	System.out.println(pl.getListOfProducts());
+    	CustomerArrayList caList = new CustomerArrayList();
+		ArrayList<Customer> custListAr = caList.getListOfCustomers();
+		
+		caList.populatePurHistory();
+		caList.totalSpentPerCustomer(355);
     	
     	long after = System.currentTimeMillis();
-		System.out.println("Time taken: " + (after - before) + " milliseconds\n");
+		System.out.println("Time taken to add up orders: " + (after - before) + " milliseconds\n");
     	
     	
     	

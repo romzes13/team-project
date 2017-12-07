@@ -1,3 +1,5 @@
+import teama.arraylist.CustomerArrayList;
+
 /**
 * The Tree class implements the Evaluation class
 * And contains methods for looking up customer names, 
@@ -121,4 +123,16 @@ public class Tree implements Evaluation {
     public void countAllRatings() {
     
     }
+
+	@Override
+	public int countCustomerRating(String lastName, String firstName) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Product lookUpProduct(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

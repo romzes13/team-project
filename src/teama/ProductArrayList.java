@@ -35,7 +35,7 @@ public class ProductArrayList implements Evaluation {
 	// if so return the item. If not, "No product has been found."
 
 	public Product lookUpProduct(String item) {
-		System.out.println("Looking up: " + item + " from" + productList.size() + " products");
+		System.out.println("Looking up " + item.toUpperCase() + " from " + productList.size() + " products");
 		for (Product p : productList) {
 			if (p.getName().equalsIgnoreCase(item))
 				return p;

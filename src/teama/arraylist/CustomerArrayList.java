@@ -10,7 +10,7 @@ import teama.Product;
 import teama.ProductDataFile;
 /**
  * CustomerArrayList class contains implemented methods
- * from Evaluation interface.
+ * from Evaluation interface for ArrayList solution.
  * 
  * @author Roman
  *
@@ -55,7 +55,7 @@ public class CustomerArrayList  implements Evaluation{
 		int productsTotal = listOfProducts.size();
 		System.out.println("\nProducts total: " + productsTotal);
 		
-		int totalPurchasesAded =0;
+		int totalPurchasesAded = 0;
 		
 		// Populating arrayList 
 		for( int i = 0; i < listOfCustomers.size(); i++) 
@@ -70,7 +70,7 @@ public class CustomerArrayList  implements Evaluation{
 				
 			{
 				// Random productID from 1 to total number of products
-				int randomProductID = ((int) (Math.random() * productsTotal + 1));
+				int randomProductID = ((int) (Math.random() * productsTotal));
 				// Add it to LinkedList
 				ll.add(randomProductID);
 				
@@ -117,13 +117,75 @@ public class CustomerArrayList  implements Evaluation{
 		return null;
 	}
 
+
+	/**
+	 * Count total money each customer spent on purchases.
+	 * @param id Customer id number
+	 * @return total amount of money spent.
+	 */
+	public double countCustomerP(int id) {
+		
+		double total =0;
+		
+		LinkedList<Integer> ll = new LinkedList<>();  // Customer purchase history
+		ll = purchaseHistory.get(id);
+		
+		   // Print all elements in list
+		   for (Integer productId : ll) {
+			   
+			  // System.out.println("Product id = " + productId + "  " + listOfProducts.get(productId).toString());
+			   /**
+			    * TODO Got index out of bounds exception below when product id = 466 
+			    */
+			   total = total + listOfProducts.get(productId).getPrice() ;
+		   }
+				
+		return total;		
+	}
+	
 	
 	/**
 	 * Count customer rating from purchase history.
 	 */
 	public int countCustomerRating(String name) {
-		// TODO 
-		return 0;
+		
+		int rank = 0;
+		
+		if (lookUpCustomer(name) != null) {
+			
+			// get customer index number
+			int index =	listOfCustomers.indexOf(lookUpCustomer(name));
+			// get total amount of money customer has spent
+			double total = countCustomerP(index);
+			
+			// calculate customer rating
+			rank = setCustomerRating(total);
+
+			// set customer rating
+			listOfCustomers.get(index).setRank(rank);
+			
+		} else {
+			
+			System.out.println("Customer not found!");
+		}
+		
+		
+		return rank;
+	}
+	
+	/**
+	 * Set customer rating.
+	 * @param total amount
+	 * @return number from 0 to 11
+	 */
+	public int setCustomerRating(double total) {
+		
+		int rank =0;
+		
+		rank = (int) (total/40);
+		//System.out.println("Total =" + total + " and rating = " + rank);
+		
+		return rank;
 	}
 
 	@Override
@@ -164,8 +226,20 @@ public class CustomerArrayList  implements Evaluation{
 	 * TODO Generate ProductList file.
 	 */
 	public void setAllRatings() {
-		for(Customer c : listOfCustomers) {
-			c.setRank((int )(Math.random() * 10));
+		
+		/*for(Customer c : listOfCustomers) {
+			//c.setRank((int )(Math.random() * 10));
+			}*/
+		
+		int total = listOfCustomers.size();
+		for(int i=0; i<total; i++) {
+			
+			double amount = countCustomerP(i);
+			
+			int rank = setCustomerRating(amount);
+			
+			listOfCustomers.get(i).setRank(rank);
+					
 		}
 		
 	}

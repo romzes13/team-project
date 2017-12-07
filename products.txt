@@ -23,7 +23,7 @@ hat, $46
 fishing hook, $25
 car horn, $9
 key ring, $44
-kitchen knife,  $50
+kitchen knife, $50
 plastic bags, $16
 needles, $1
 parcel, $45
@@ -312,7 +312,7 @@ Xbox, $35
 fog machine,  $44
 jelly,  $12
 Writing pads, $27
-Post–it notes, $32
+Postï¿½it notes, $32
 Phone message pads, $22
 Laser printer paper, $25
 Copy paper, $48
@@ -327,7 +327,7 @@ Index dividers, $11
 Tabs, $35
 Guitar, $15
 3.5" high density disks, $29
-CD–Roms, $14
+CDï¿½Roms, $14
 Zip drive tapes, $4
 Price tags, $40
 Name badges, $34

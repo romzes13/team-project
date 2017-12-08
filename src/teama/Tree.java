@@ -1,34 +1,95 @@
-/**
-* The Tree class implements the Evaluation class
-* And contains methods for looking up customer names, 
-* ratings, and products.
-*/
+package teama;
 
 public class Tree implements Evaluation {
-  
-  private Node root;
-  private CustomerArrayList customers;
-  
-  /* Constructor */
-  public Tree() {
-    root = null;
-  }
-  
-	// TODO: populate tree with customers and products
+    
+    private Node root;
+    
+    /* Constructor */
+    public Tree() {
+        root = null;
+    }
+    	
+   /**
+    * Insert method adapted from Lafore, R. (2003). Binary Trees. Data Structures and 
+    * Algorithms in Java (2nd ed.). Sams Publishing.
+    */
+   
+    /**
+     * Insert method inserts a new node
+     * @param id
+     */
+    public void insert(int id) {
+        Node newNode = new Node();
+        newNode.id = id;
+        
+        if(root == null)
+            root = newNode;
+        else {
+            Node current = root;
+            Node parent;
+            while(true) {
+                parent = current;
+                if(id < current.id) {
+                    current = current.leftChild;
+                    if(current == null) {
+                        parent.leftChild = newNode;
+                        return;
+                    }
+                }
+                else {
+                    current = current.rightChild;
+                    if(current == null) {
+                        parent.rightChild = newNode;
+                        return;
+                    }
+                }
+            }
+        }
+    }
+
 	
-  /**
-	 * Look up customer by name.
+  	/**
+	 * Look up customer
 	 * @param name
 	 * @return Customer information.
 	 */
-	public Customer lookUpCustomer(String lastName, String firstName) {
-		Node current = root; 
-		while(current.lastName != lastName) {
-		  if(lastName.compareTo(current.lastName) < 0
-		    || lastName.compareTo(current.lastName) > 0) {
-		    current = current.child;
-        }
-        return current;
+	public Customer lookUpCustomer(int id, String lastName, String firstName) {
+		Node current = root;
+        	while(current.id != id) {
+		    if(id < current.id) {
+			current = current.leftChild;
+			while(current.firstName != firstName) {
+				if(firstName.compareTo(current.firstName) < 0)
+					current = current.leftChild;
+				else
+					current = current.rightChild;
+			}
+			while(current.lastName != lastName) {
+				if(lastName.compareTo(current.lastName) < 0) 
+					current = current.leftChild;
+				else
+					current = current.rightChild;
+			}
+		    }
+		    else {
+			current = current.rightChild;
+			    while(current.firstName != firstName) {
+				if(firstName.compareTo(current.firstName) < 0)
+					current = current.leftChild;
+				else
+					current = current.rightChild;
+			 }
+			    while(current.lastName != lastName) {
+				if(lastName.compareTo(current.lastName) < 0) 
+					current = current.leftChild;
+				else
+					current = current.rightChild;
+			}
+		    }
+		    if(current == null)
+			return null;
+		}
+		return current;
     }
 	
 	/**
@@ -36,31 +97,7 @@ public class Tree implements Evaluation {
 	 * @return Customer rating.
 	 */
 	public int countCustomerRating(String lastName, String firstName, int rank) {
-		Node current = root;
-		Node currentRank;
-		/*
-		* While the lastName being searched for does not match current node's lastName, 
-		* keep moving down the tree until there is a match
-		*/
-		while(current.lastName != lastName) {
-		  if(lastName.compareTo(current.lastName) < 0
-		    || lastName.compareTo(current.lastName) > 0) {
-		    current = current.child;		  // current becomes firstName
-        	}
-			
-		/*
-		* While the firstName being searched for does not match current node's firstName, 
-		* keep moving down the tree until there is a match
-		*/
-		while(current.firstName ! = firstName) {
-			if(firstName.compareTo(current.firstName) < 0
-		     	|| firstName.compareTo(current.firstName) > 0) {
-			  current = current.child;	// current node becomes rank
-			  currentRank = current.rank; // found rank
-		  	}
-		}
-        return current;
-	return currentRank;
+		// TODO
     }
 	
 	/**
@@ -69,41 +106,7 @@ public class Tree implements Evaluation {
 	 * @return Product information.
 	 */
 	public Product lookUpProduct(String lastName, String firstName, String productName) {
-    		Node current = root;
-		Node currentProduct;
-		/*
-		* While the lastName being searched for does not match current node's lastName, 
-		* keep moving down the tree until there is a match
-		*/
-		while(current.lastName != lastName) {
-		  if(lastName.compareTo(current.lastName) < 0
-		    || lastName.compareTo(current.lastName) > 0) {
-		    current = current.child;		  // current becomes firstName
-        	}
-			
-		/*
-		* While the firstName being searched for does not match current node's firstName, 
-		* keep moving down the tree until there is a match
-		*/
-		while(current.firstName ! = firstName) {
-			if(firstName.compareTo(current.firstName) < 0
-		     	|| firstName.compareTo(current.firstName) > 0) {
-			  current = current.child;	// current node becomes rank
-			  currentRank = current.rank; // found rank
-		  	}
-		}
-			
-		/*
-		* While the firstName being searched for does not match current node's firstName, 
-		* keep moving down the tree until there is a match
-		*/
-		while(current.productName ! = productName) {
-			if(productName.compareTo(current.productName) < 0
-		     	|| productName.compareTo(current.productName) > 0) {
-			  current = current.child;	// current node becomes 
-			  currentProduct = current.name; // found rank
-		  	}
-		}
+    		// TODO
     }
 	
 	/**
@@ -111,7 +114,7 @@ public class Tree implements Evaluation {
 	 * @return Average rating.
 	 */
 	public double averageRating() {
-    		return customers.averageRating();
+    		return 0;
     }
 	
 	/**
@@ -119,6 +122,6 @@ public class Tree implements Evaluation {
 	 * rank for each customer.
 	 */
     public void countAllRatings() {
-    
+    		return null;
     }
 }

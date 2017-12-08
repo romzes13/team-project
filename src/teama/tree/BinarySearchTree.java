@@ -4,10 +4,18 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
 
-//Introduced in Chapter 11
-/** A binary search tree of Comparables. */
-public class BinarySearchTree <E extends Comparable<E>, T> implements Parent<E, T>, Set<E> {
-//	public class BinarySearchTree <E extends Comparable<E>, T> implements  Set<E> {
+import teama.Customer;
+import teama.Evaluation;
+import teama.Product;
+
+
+/** A binary search tree of Comparables. 
+ * TODO Not sure if Set<E> has anything to do here...
+ * 
+ * */
+public class BinarySearchTree <E extends Comparable<E>, T> implements Parent<E, T>, Evaluation {
+//public class BinarySearchTree <E extends Comparable<E>, T> implements Parent<E, T>, Set<E>, Evaluation {
+
 	
 	
 /** Root node. */
@@ -49,11 +57,16 @@ public void add(E target, T list) {
  parent.setChild(comparison, new BinaryNode<E, T>(target, list));
  
 }
-   
-public boolean contains(E target) {
+/**
+ * Check if node exists.   
+ * @param target
+ * @return
+ */
+// Replaced E with the Customer
+public boolean contains(Customer target) {
  BinaryNode<E, T> node = root;
  while (node != null) {
-   int comparison = target.compareTo(node.getItem());
+   int comparison = target.compareTo((Customer) node.getItem());
    if (comparison < 0) {     // Go left
      node = node.getLeft();
    } else if (comparison == 0) { // Found it
@@ -140,76 +153,60 @@ protected void spliceOut(BinaryNode<E, T> node,
  }
 }
 
+
 @Override
-public boolean add(E e) {
-	// TODO Auto-generated method stub
-	return false;
+public Customer lookUpCustomer(String lastName, String firstName) {
+	Customer customer = new Customer(firstName, lastName);
+	
+	//BinaryNode<E, T> node = root;
+	//node.setItem(customer);
+	
+	
+	BinaryNode<E, T> node = root;
+	 while (node != null) {
+		 System.out.println("Nodes: " + node.getItem().toString());
+	   int comparison = customer.compareTo((Customer) node.getItem());
+	   if (comparison < 0) {     // Go left
+	     node = node.getLeft();
+	   } else if (comparison == 0) { // Found it
+	     //return true;
+		   System.out.println("Found it!" + node.getItem().toString());
+	   } else {                  // Go right
+	     node = node.getRight();
+	   }
+	 }
+	
+	return null;
 }
 
 @Override
-public boolean addAll(Collection<? extends E> c) {
+public int countCustomerRating(String lastName, String firstName) {
 	// TODO Auto-generated method stub
-	return false;
+	return 0;
 }
 
 @Override
-public void clear() {
+public Product lookUpProduct(String name) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public double averageRating() {
+	// TODO Auto-generated method stub
+	return 0;
+}
+
+@Override
+public void countAllRatings() {
 	// TODO Auto-generated method stub
 	
 }
 
-@Override
-public boolean contains(Object o) {
-	// TODO Auto-generated method stub
-	return false;
-}
+/**
+ * TODO Methods below are implemented from the Set<E> Interface
+ * and probably can be removed with the Set<E> interface.
+ */
 
-@Override
-public boolean containsAll(Collection<?> c) {
-	// TODO Auto-generated method stub
-	return false;
-}
-
-@Override
-public boolean isEmpty() {
-	// TODO Auto-generated method stub
-	return false;
-}
-
-@Override
-public Iterator<E> iterator() {
-	// TODO Auto-generated method stub
-	return null;
-}
-
-@Override
-public boolean remove(Object o) {
-	// TODO Auto-generated method stub
-	return false;
-}
-
-@Override
-public boolean removeAll(Collection<?> c) {
-	// TODO Auto-generated method stub
-	return false;
-}
-
-@Override
-public boolean retainAll(Collection<?> c) {
-	// TODO Auto-generated method stub
-	return false;
-}
-
-@Override
-public Object[] toArray() {
-	// TODO Auto-generated method stub
-	return null;
-}
-
-@Override
-public <T> T[] toArray(T[] a) {
-	// TODO Auto-generated method stub
-	return null;
-}
 
 }

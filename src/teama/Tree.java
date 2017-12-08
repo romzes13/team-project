@@ -105,8 +105,10 @@ public class Tree implements Evaluation {
 	 * Calculates customer rating by provided name.
 	 * @return Customer rating.
 	 */
-	public int countCustomerRating(String lastName, String firstName, int rank) {
+	@Override
+	public int countCustomerRating(String lastName, String firstName) {
 		// TODO
+		return 0;
     }
 	
 	/**
@@ -114,9 +116,11 @@ public class Tree implements Evaluation {
 	 * @param name
 	 * @return Product information.
 	 */
-	public Product lookUpProduct(String lastName, String firstName, String productName) {
-    		// TODO
-    }
+	@Override
+	public Product lookUpProduct(String productName) {
+		// TODO Finish writing the method
+		return null;
+	}
 	
 	/**
 	 * Calculates the average rating of all customers.
@@ -131,17 +135,11 @@ public class Tree implements Evaluation {
 	 * rank for each customer.
 	 */
     public void countAllRatings() {
-    		return null;
+    		
     }
 
 	@Override
-	public int countCustomerRating(String lastName, String firstName) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public Product lookUpProduct(String name) {
+	public Customer lookUpCustomer(String lastName, String firstName) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -81,7 +81,7 @@ public class CustomerArrayList implements Evaluation {
 			purchaseHistory.add(ll);
 
 		}
-		System.out.println("Purchase history populated with: " + totalPurchasesAded + "\n");
+		System.out.println("Purchase history populated with: " + totalPurchasesAded + " purchases\n");
 
 		long after = System.currentTimeMillis();
 		System.out.println("Time took to populate purchaseHistory: " + (after - before) + " milliseconds\n");

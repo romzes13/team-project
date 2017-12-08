@@ -19,13 +19,27 @@ public class test {
 	public static void helloDan() {
 		System.out.println("Hello, I'm Dan!");
 	}
+
+
+	
+	public static void helloThomas() {
+		
+		System.out.println("Howdy, I'm Tom!");	
+	}
+	
+	public static void helloFrank() {
+		System.out.println("Hello, I'm Frank!");
+	}
+
 	
 	
 	public static void main(String[] args) {
 		
-
 		helloRoman();
 		helloDan();
+		helloThomas();
+		helloFrank();
+
 		
 	}
 

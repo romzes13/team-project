@@ -55,6 +55,9 @@ public class TestBtree {
 		System.out.println(" Btree " + btree.size());
 		//System.out.println(" Btree " + btree.getChild(-1).toString());
 		System.out.println(" Btree " + btree.contains(customer));
+		String lastName = "kelly";
+		String firstName = "";
+		btree.lookUpCustomer(lastName, firstName);
 		
 		
 		

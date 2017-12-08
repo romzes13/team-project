@@ -1,6 +1,6 @@
 package teama.tree;
 
-public class BinaryNode<E, T> {
+public class BinaryNode<E, T> implements Parent<E, T>{
 
 /** The item associated with this node. */
 private E item;
@@ -32,6 +32,12 @@ public BinaryNode(E item,
   this.right = right;
 }
 
+public T getItem2() {
+	return item2;
+}
+public void setItem2(T item2) {
+	this.item2 = item2;
+}
 public BinaryNode<E, T> getChild(int direction) {
   if (direction < 0) {
 	  System.out.println("Left");

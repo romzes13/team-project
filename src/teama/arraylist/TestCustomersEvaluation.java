@@ -36,22 +36,33 @@ public class TestCustomersEvaluation {
 		// This arrayList has arrayList methods.
 		ArrayList<Customer> custListAr = caList.getListOfCustomers();
 
-		
+		// Generating random history purchase
 		caList.populatePurHistory();
-
-		System.out.println("Average rating: " + caList.averageRating());
-		System.out.println("Look up customer with name: " + caList.lookUpCustomer("kelly"));
-
-		//
-		System.out.println("First name: =" + custListAr.get(0).toString());
+		
+		/**
+		 * Timing to calculate all records
+		 */
+		
+		long before = System.currentTimeMillis();
+			caList.setAllRatings();
+		
+			long after = System.currentTimeMillis();
+		
+			System.out.println("Time took to calculate ratings: " + (after - before) + " milliseconds\n");
+			
+			
+			System.out.println("Look up customer with name: " + caList.lookUpCustomer("kelly"));
+			System.out.println("Average rating: " + caList.averageRating());
 
 		// Get the random number from 0 to array.sizi()
 		int randomNumber = ((int) (Math.random() * custListAr.size()));
+		System.out.println("========================================================\n");
 		System.out.println("Random number = " + randomNumber);
 		System.out.println("Random name: =" + custListAr.get(randomNumber).getLastName() + "=="
 				+ custListAr.get(randomNumber).getFirstName() + "= and rank = "
 				+ custListAr.get(randomNumber).getRank());
-
+		
+		System.out.println("========================================================\n");
 		
 		// Get customer id
 		String name = "kelly";
@@ -62,29 +73,12 @@ public class TestCustomersEvaluation {
 		System.out.println("At index=" + id );
 		
 		
-		System.out.println("\nTotal=" + caList.countCustomerP(id));
+		System.out.println("\nTotal=" + caList.countCustomerAmount(id));
 		
 		
-		/**
-		 * Testing random ratings
-		 */
-		for (int i=0; i< 20; i++) {
-			
-			double rn = ( (Math.random() * 466));
-			caList.setCustomerRating(rn);
-		}
 		
-		//System.out.println("Product list=" + productList.size() + "  and last element " + productList.get(index));
+
 		
-		/*for(int i=460; i < 467; i++) {
-			
-			System.out.println(" i=" + i + "  " + productList.get(i).toString());
-		}*/
-		
-		long before = System.currentTimeMillis();
-		caList.setAllRatings();
-		long after = System.currentTimeMillis();
-		System.out.println("Time took to calculate ratings: " + (after - before) + " milliseconds\n");
 		
 		
 	}

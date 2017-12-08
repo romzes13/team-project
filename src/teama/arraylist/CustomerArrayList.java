@@ -173,6 +173,7 @@ public class CustomerArrayList implements Evaluation {
 	 * 
 	 */
 
+
 	public Customer lookUpCustomer(String name) {
 
 		System.out.println("Looking up: " + name + " from " + listOfCustomers.size() + " names");
@@ -187,29 +188,27 @@ public class CustomerArrayList implements Evaluation {
 	/**
 	 * Count total money each customer spent on purchases.
 	 * 
-	 * @param id
-	 *            Customer id number
+	 * @param id Customer id number
+	 *            
 	 * @return total amount of money spent.
 	 */
-	public double countCustomerP(int id) {
 
-		double total = 0;
-
-		LinkedList<Integer> ll = new LinkedList<>(); // Customer purchase history
+	public double countCustomerAmount(int id) {
+		
+		double total =0;
+		
+		LinkedList<Integer> ll = new LinkedList<>();  // Customer purchase history
 		ll = purchaseHistory.get(id);
+		
+		   // Print all elements in list
+		   for (Integer productId : ll) {
+			   
+			  // System.out.println("Product id = " + productId + "  " + listOfProducts.get(productId).toString());
+			   total = total + listOfProducts.get(productId).getPrice() ;
+		   }
+				
+		return total;		
 
-		// Print all elements in list
-		for (Integer productId : ll) {
-
-			// System.out.println("Product id = " + productId + " " +
-			// listOfProducts.get(productId).toString());
-			/**
-			 * TODO Got index out of bounds exception below when product id = 466
-			 */
-			total = total + listOfProducts.get(productId).getPrice();
-		}
-
-		return total;
 	}
 
 	/**
@@ -224,7 +223,8 @@ public class CustomerArrayList implements Evaluation {
 			// get customer index number
 			int index = listOfCustomers.indexOf(lookUpCustomer(name));
 			// get total amount of money customer has spent
-			double total = countCustomerP(index);
+
+			double total = countCustomerAmount(index);
 
 			// calculate customer rating
 			rank = setCustomerRating(total);
@@ -235,7 +235,7 @@ public class CustomerArrayList implements Evaluation {
 		} else {
 
 			System.out.println("Customer not found!");
-		}
+		}		
 
 		return rank;
 	}
@@ -264,59 +264,64 @@ public class CustomerArrayList implements Evaluation {
 	}
 
 	/**
-	 * Calculating average rating.
+	 * Calculating the average rating 
+	 * of all customers.
 	 */
 	@Override
 	public double averageRating() {
 		int total = 0;
-		for (Customer c : listOfCustomers) {
-			// total += c.getRank();
-			total = total + c.getRank();
+
+		for(Customer c : listOfCustomers) 
+		{
+			total += c.getRank();
+			//total = total + c.getRank();
 		}
-		System.out.println("Printing from average, total=" + total);
-		return total / listOfCustomers.size();
+		
+		System.out.println("Printing from average, total=" +total);
+		
+		return total/listOfCustomers.size();
 	}
 
+	
 	/**
-	 * Count all customer ratings based on their purchase history. TODO Generate
-	 * list of products and prices.
-	 */
+	 * Count all customer ratings based on their purchase history.
+	 * 
+	 */	
 	@Override
 	public void countAllRatings() {
-		for (Customer c : listOfCustomers) {
-
-		}
-
+		
+		int total = listOfCustomers.size();
+		
+			for(int i=0; i<total; i++) 
+			{
+			
+				double amount = countCustomerAmount(i);
+				int rank = setCustomerRating(amount);
+				listOfCustomers.get(i).setRank(rank);					
+			}		
 	}
-
+	
+	
 	/**
-	 * Setting temporary ratings for customers, from 0 to 10 TODO Generate
-	 * ProductList file.
+	 * Setting  ratings for customers, 
+	 * from 0 to 11.
+	 * 
 	 */
 	public void setAllRatings() {
-
-		/*
-		 * for(Customer c : listOfCustomers) { //c.setRank((int )(Math.random() * 10));
-		 * }
-		 */
-
+		
 		int total = listOfCustomers.size();
-		for (int i = 0; i < total; i++) {
-
-			double amount = countCustomerP(i);
-
+		for(int i=0; i<total; i++) {
+			
+			double amount = countCustomerAmount(i);
+			
 			int rank = setCustomerRating(amount);
-
-			listOfCustomers.get(i).setRank(rank);
-
+			//System.out.println("rank="+rank);
+			listOfCustomers.get(i).setRank(rank);	
 		}
 
 	}
-
-	// Getter for listOfCustomers
-	public ArrayList<Customer> getListOfCustomers() {
-		return listOfCustomers;
-	}
+	
+	
 
 	@Override
 	public Customer lookUpCustomer(String lastName, String firstName) {
@@ -328,6 +333,13 @@ public class CustomerArrayList implements Evaluation {
 	public int countCustomerRating(String lastName, String firstName) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	
+	
+	// Getter for listOfCustomers
+	public ArrayList<Customer> getListOfCustomers() {
+		return listOfCustomers;
 	}
 
 	// Added method to Shuffle the list in random order.

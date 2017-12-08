@@ -12,14 +12,19 @@ public class BinarySearchTree <E extends Comparable<E>, T> implements Parent<E, 
 	
 /** Root node. */
 private BinaryNode<E, T> root;
+private Parent<E, T> parent;
 
 /** A BinarySearchTree is initially empty. */
 public BinarySearchTree() {
  root = null;
+ //parent = null;
 }
 
 public void add(E target, T list) {
-	BinaryNode<E, T> parent =  new BinaryNode<>() ;
+	//BinaryNode<E, T> parent =  new BinaryNode<>() ;
+	 parent = this;
+	//Parent<E, T> parent =  new BinaryNode();
+	
  BinaryNode<E, T> node = root;
  int comparison = 0;
  while (node != null) {
@@ -28,13 +33,13 @@ public void add(E target, T list) {
    System.out.println("Comparison=" + comparison);
    if (comparison < 0) {     // Go left
 	   System.out.println("Go Left");
-     parent =       node;
+     parent =        node;
      node = node.getLeft();
    } else if (comparison == 0) { // It's already here
      return;
    } else {                  // Go right
 	   System.out.println("Go Right");
-     parent =      node;
+     parent =       node;
      node = node.getRight();
    }
  }
@@ -71,7 +76,7 @@ public void remove(E target) {
  while (node != null) {
    int comparison = target.compareTo(node.getItem());
    if (comparison < 0) {     // Go left
-     parent = (Parent<E, T>) node;
+     parent =  node;
      node = node.getLeft();
    } else if (comparison == 0) { // Found it
      spliceOut(node, parent, direction);
@@ -102,7 +107,6 @@ protected E removeLeftmost(BinaryNode<E, T> node, Parent<E, T> parent) {
 
 public void setChild(int direction, BinaryNode<E, T> child) {
  root = child;
- 
  
 }
 

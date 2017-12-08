@@ -171,6 +171,7 @@ public class CustomerArrayList implements Evaluation {
 	 * is empty first. TODO It uses linear search now, change it to binary search.
 	 * Also how to deal with multiple names? Return ListOfCustomers maybe?
 	 * 
+	 */
 
 
 	public Customer lookUpCustomer(String name) {
@@ -187,8 +188,8 @@ public class CustomerArrayList implements Evaluation {
 	/**
 	 * Count total money each customer spent on purchases.
 	 * 
-	 * @param id
-	 *            Customer id number
+	 * @param id Customer id number
+	 *            
 	 * @return total amount of money spent.
 	 */
 

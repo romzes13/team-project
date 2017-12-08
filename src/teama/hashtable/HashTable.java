@@ -10,28 +10,47 @@ import java.util.*;
 
 public class HashTable implements Evaluation {
 
-	private Hashtable<Customer, Customer> custumerProduct = new Hashtable();
+	private Hashtable<Customer, Customer> customerProduct = new Hashtable();
 	private CustomerArrayList cList;
 	private ProductArrayList pList;
-	
+
 	public HashTable() {
 		cList = new CustomerArrayList();
 		ArrayList<Customer> custArl = cList.getListOfCustomers();
 		cList.populatePurHistory();
-	    pList = new ProductArrayList();
-	    ArrayList<Product> productArl = pList.getListOfProducts();
-	    populateTable(custArl,cList);
-		
-	}  //constructor currently empty
-	
+		pList = new ProductArrayList();
+		ArrayList<Product> productArl = pList.getListOfProducts();
+		populateTable(custArl, cList);
+
+	} // constructor currently empty
+
 	public void populateTable(ArrayList<Customer> custL, CustomerArrayList caList) {
 		ArrayList<Customer> custArlPurchasehistory = cList.getListOfCustomers();
 		for (int i = 0; i < custL.size(); i++) {
-				custumerProduct.put(custL.get(i), custArlPurchasehistory.get(i));
+			customerProduct.put(custL.get(i), custArlPurchasehistory.get(i));
 		}
-		
+
 	}
-	
+
+	// Scroll through the table and print out each index
+
+	public void printTable(HashTable table) { // Might need to change void (to hashtable) and cast the HashTable
+
+		long before = System.currentTimeMillis();
+
+		Enumeration l = customerProduct.elements();
+		while (l.hasMoreElements())
+			System.out.println(l.nextElement());
+
+		long after = System.currentTimeMillis();
+		System.out.println("Time taken to print table: " + (after - before) + " milliseconds\n");
+	}
+
+	// Return the table
+	public Hashtable<Customer, Customer> getTable() {
+		return customerProduct;
+	}
+
 	@Override
 	public Customer lookUpCustomer(String lastName, String firstName) {
 		// TODO Auto-generated method stub
@@ -59,7 +78,7 @@ public class HashTable implements Evaluation {
 	@Override
 	public void countAllRatings() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

@@ -256,6 +256,19 @@ public class CustomerArrayList implements Evaluation {
 
 		return rank;
 	}
+	
+	//Method to print whole list
+	public void printCustomerList() {
+		long before = System.currentTimeMillis();
+		
+		for (Customer c : listOfCustomers) {
+			System.out.println(c);
+		}
+		
+		long after = System.currentTimeMillis();
+		System.out.println("Time taken: " + (after - before) + "milliseconds\n");
+		
+	}
 
 	@Override
 	public Product lookUpProduct(String name) {

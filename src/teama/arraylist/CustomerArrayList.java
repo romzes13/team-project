@@ -81,7 +81,7 @@ public class CustomerArrayList implements Evaluation {
 			purchaseHistory.add(ll);
 
 		}
-		System.out.println("Purchase history populated with: " + totalPurchasesAded + "\n");
+		System.out.println("Purchase history populated with: " + totalPurchasesAded + " purchases\n");
 
 		long after = System.currentTimeMillis();
 		System.out.println("Time took to populate purchaseHistory: " + (after - before) + " milliseconds\n");
@@ -255,6 +255,19 @@ public class CustomerArrayList implements Evaluation {
 		// System.out.println("Total =" + total + " and rating = " + rank);
 
 		return rank;
+	}
+	
+	//Method to print whole list
+	public void printCustomerList() {
+		long before = System.currentTimeMillis();
+		
+		for (Customer c : listOfCustomers) {
+			System.out.println(c);
+		}
+		
+		long after = System.currentTimeMillis();
+		System.out.println("Time taken: " + (after - before) + "milliseconds\n");
+		
 	}
 
 	@Override

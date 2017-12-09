@@ -22,8 +22,9 @@ public class Sandbox {
 		
 	HashTable test = new HashTable();
 	Hashtable customerProduct = test.getTable();
-	test.printTable(test);
+	//test.printValues(test);
 	//System.out.println(customerProduct);
+	test.printKeys(test);
 	
 	}
 }

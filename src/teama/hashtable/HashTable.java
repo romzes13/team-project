@@ -32,9 +32,9 @@ public class HashTable implements Evaluation {
 
 	}
 
-	// Scroll through the table and print out each index
+	// Scroll through the table and print out each value (i.e. purchase history node)
 
-	public void printTable(HashTable table) { // Might need to change void (to hashtable) and cast the HashTable
+	public void printValues(HashTable table) { // Might need to change void (to hashtable) and cast the HashTable
 
 		long before = System.currentTimeMillis();
 
@@ -43,13 +43,27 @@ public class HashTable implements Evaluation {
 			System.out.println(l.nextElement());
 
 		long after = System.currentTimeMillis();
-		System.out.println("Time taken to print table: " + (after - before) + " milliseconds\n");
+		System.out.println("Time taken to print values from table: " + (after - before) + " milliseconds\n");
+	}
+	
+	// Scroll through the table and print out each key (i.e. Customer object)
+	public void printKeys(HashTable table) {
+		
+		long before = System.currentTimeMillis();
+
+		Enumeration k = customerProduct.keys();
+		while (k.hasMoreElements())
+			System.out.println(k.nextElement());
+
+		long after = System.currentTimeMillis();
+		System.out.println("Time taken to print keys from table: " + (after - before) + " milliseconds\n");
 	}
 
 	// Return the table
 	public Hashtable<Customer, LinkedList> getTable() {
 		return customerProduct;
 	}
+	
 
 	@Override
 	public Customer lookUpCustomer(String lastName, String firstName) {

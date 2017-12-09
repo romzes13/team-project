@@ -13,18 +13,11 @@ public class Sandbox {
 	
 	public static void main(String[] args) {
 		
-		//CustomerArrayList clist = new CustomerArrayList();
-		//ArrayList<Customer> cr = clist.getListOfCustomers();
-		//clist.printCustomerList();
-	
-		
-		//Hashtable is faster so far.
-		
-	HashTable test = new HashTable();
-	Hashtable customerProduct = test.getTable();
-	//test.printValues(test);
-	//System.out.println(customerProduct);
-	test.printKeys(test);
+		 HashTable test = new HashTable();
+
+			Hashtable customerProduct = test.getTable();
+
+			test.printTable(test);
 	
 	}
 }

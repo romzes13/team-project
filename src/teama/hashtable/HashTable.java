@@ -10,7 +10,7 @@ import java.util.*;
 
 public class HashTable implements Evaluation {
 
-	private Hashtable<Customer, Customer> customerProduct = new Hashtable();
+	private Hashtable<Customer, LinkedList> customerProduct = new Hashtable();
 	private CustomerArrayList cList;
 	private ProductArrayList pList;
 
@@ -18,16 +18,16 @@ public class HashTable implements Evaluation {
 		cList = new CustomerArrayList();
 		ArrayList<Customer> custArl = cList.getListOfCustomers();
 		cList.populatePurHistory();
+		ArrayList<LinkedList<Integer>> purchaseHistory = cList.getPurchaseHistory();
 		pList = new ProductArrayList();
 		ArrayList<Product> productArl = pList.getListOfProducts();
-		populateTable(custArl, cList);
+		populateTable(custArl, purchaseHistory);
 
 	} // constructor currently empty
 
-	public void populateTable(ArrayList<Customer> custL, CustomerArrayList caList) {
-		ArrayList<Customer> custArlPurchasehistory = cList.getListOfCustomers();
+	public void populateTable(ArrayList<Customer> custL, ArrayList<LinkedList<Integer>> purHistory) {
 		for (int i = 0; i < custL.size(); i++) {
-			customerProduct.put(custL.get(i), custArlPurchasehistory.get(i));
+			customerProduct.put(custL.get(i), purHistory.get(i));
 		}
 
 	}
@@ -47,7 +47,7 @@ public class HashTable implements Evaluation {
 	}
 
 	// Return the table
-	public Hashtable<Customer, Customer> getTable() {
+	public Hashtable<Customer, LinkedList> getTable() {
 		return customerProduct;
 	}
 

@@ -87,6 +87,12 @@ public class CustomerArrayList implements Evaluation {
 		System.out.println("Time took to populate purchaseHistory: " + (after - before) + " milliseconds\n");
 
 	}
+	
+	public ArrayList<LinkedList<Integer>> getPurchaseHistory(){
+		
+		return purchaseHistory;
+		
+	}
 
 	/*
 	 * Calculating the total money spent for the specified linkedlist. We want to go

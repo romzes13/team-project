@@ -2,7 +2,6 @@ package teama;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
-
 import teama.arraylist.CustomerArrayList;
 import teama.hashtable.HashTable;
 
@@ -17,12 +16,14 @@ public class Sandbox {
 		//CustomerArrayList clist = new CustomerArrayList();
 		//ArrayList<Customer> cr = clist.getListOfCustomers();
 		//clist.printCustomerList();
+	
 		
 		//Hashtable is faster so far.
 		
 	HashTable test = new HashTable();
-	Hashtable<Customer, Customer> customerProduct = test.getTable();
+	Hashtable customerProduct = test.getTable();
 	test.printTable(test);
+	//System.out.println(customerProduct);
 	
 	}
 }

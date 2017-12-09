@@ -1,6 +1,6 @@
 package teama.tree;
 
-public class BinaryNode<E, T> implements Parent<E, T>{
+public class BinaryNode<E, T> implements Parent<E, T>, java.io.Serializable{
 
 /** The item associated with this node. */
 private E item;

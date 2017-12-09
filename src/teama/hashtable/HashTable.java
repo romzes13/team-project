@@ -50,6 +50,20 @@ public class HashTable implements Evaluation {
 	public Hashtable<Customer, Customer> getTable() {
 		return customerProduct;
 	}
+	
+	//temp method to look up customer
+	public void getCustomer(String input) {
+		
+
+		System.out.println("Looking up: " + input + " from " + customerProduct.size() + " names");
+			if(customerProduct.contains(input)) {
+			System.out.println(input);
+		}
+			else {
+				System.out.println("Cannot be found.");
+			}
+		
+	}
 
 	@Override
 	public Customer lookUpCustomer(String lastName, String firstName) {

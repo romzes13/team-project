@@ -164,7 +164,7 @@ public class HashTable implements Evaluation {
 		
 	} 
 	
-	public void populateRatingsTable() {
+	public void populateRatingsTable() { //populate ratingsTable hashtable for rankings
 		
 		for (int i = 0; i < custArl.size(); i++) {
 			purchaseTotals.add(totalSpentPerCustomer(i+1));
@@ -215,9 +215,9 @@ public class HashTable implements Evaluation {
 			}
 		}
 		
-		//for (int i = 0; i < custArl.size(); i++) {
-			//ratingsTable.put(arg0, arg1)
-		//}
+		for (int i = 0; i < custArl.size(); i++) {
+			ratingsTable.put(custArl.get(i), (Integer)rankings.get(i));
+		}
 		
 	}
 

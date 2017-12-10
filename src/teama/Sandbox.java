@@ -19,8 +19,8 @@ public class Sandbox {
             test.printTable(test);
 			test.printValues(test);
             test.printKeys(test);
-            test.searchCustomer( "Kevin","Balko");
-            test.totalSpentPerCustomer(44031);
+            int key = test.searchCustomer( "Joseph","Dinuzzio");
+            test.totalSpentPerCustomer(key);
             
 	
 	}

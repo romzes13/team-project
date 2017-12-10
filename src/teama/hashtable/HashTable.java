@@ -20,8 +20,8 @@ public class HashTable implements Evaluation {
 
 	public HashTable() {
 		cList = new CustomerArrayList();
-		custArl = cList.getListOfCustomers();
 		cList.populatePurHistory();
+		custArl = cList.getListOfCustomers();
 		purchaseHistory = cList.getPurchaseHistory();
 		pList = new ProductArrayList();
 		productArl = pList.getListOfProducts();
@@ -78,7 +78,7 @@ public class HashTable implements Evaluation {
 			if(n.nextElement().toString().contains(firstName + ", " + "last name: " + lastName)) {
 				System.out.println("Customer: " + firstName + " " + lastName + " exists in HashTable");
 				System.out.println("Customer is located at key: " + count);
-			    System.out.println("Next Customer Key = " + n.nextElement());
+			    //System.out.println("Next Customer Key = " + n.nextElement());
 			    flag = true;
 			    break;
 			}		
@@ -101,7 +101,7 @@ public class HashTable implements Evaluation {
 			
 			//Store the searched customers value into this list
 			Customer target = new Customer();
-			target = custArl.get(key);
+			target = custArl.get(key-1);
 	
 			tempValue = customerProduct.get(target);
 			Product tempProduct = new Product();

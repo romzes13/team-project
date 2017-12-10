@@ -158,7 +158,7 @@ public class HashTable implements Evaluation {
 	
 				System.out.println("Customer rank is: level 6, Master rank");
 			}
-				System.out.println("$" + total + " total spent");
+				
 		
 			return total;
 		

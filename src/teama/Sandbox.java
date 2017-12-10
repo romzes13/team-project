@@ -22,6 +22,8 @@ public class Sandbox {
             int key = test.searchCustomer( "Joseph","Dinuzzio");
             test.totalSpentPerCustomer(key);
             test.populateRatingsTable();
+            int count = test.countRatings();
+            test.averageRatings(count);
             
 	
 	}

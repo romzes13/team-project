@@ -16,7 +16,9 @@ public class HashTable implements Evaluation {
 	private ArrayList<Customer> custArl;
 	private ArrayList<LinkedList<Integer>> purchaseHistory;
 	private ArrayList<Product> productArl;
-	
+	private Hashtable<Customer, Integer> ratingsTable = new Hashtable();
+	private ArrayList purchaseTotals = new ArrayList();
+	private ArrayList rankings = new ArrayList();
 
 	public HashTable() {
 		cList = new CustomerArrayList();
@@ -117,10 +119,8 @@ public class HashTable implements Evaluation {
 			}
 			System.out.println("Total spent for customer at key " + key + " = $" + total);
 			
-	
 
 		   
-			
 			//This is supposed to set the rating for a specific customer however since the Customer is the key,
 			//I don't know how to tap into the key and change the customer ranking. 
 			
@@ -163,6 +163,63 @@ public class HashTable implements Evaluation {
 			return total;
 		
 	} 
+	
+	public void populateRatingsTable() {
+		
+		for (int i = 0; i < custArl.size(); i++) {
+			purchaseTotals.add(totalSpentPerCustomer(i+1));
+			
+		}
+		int customerRanking;
+		for (int i = 0; i < purchaseTotals.size(); i++) {
+			if((double)purchaseTotals.get(i) <=  0) {
+				customerRanking = 0;
+				rankings.add(customerRanking);
+			}
+			
+			if((double)purchaseTotals.get(i) > 0 && (double)purchaseTotals.get(i) < 150) {
+				
+				customerRanking = 1;
+				rankings.add(customerRanking);
+			}
+			
+			if((double)purchaseTotals.get(i) >= 150 && (double)purchaseTotals.get(i) < 300) {
+				
+				customerRanking = 2;
+				rankings.add(customerRanking);
+			}
+			
+			if((double)purchaseTotals.get(i) >= 300 && (double)purchaseTotals.get(i) < 450) {
+
+				customerRanking = 3;
+				rankings.add(customerRanking);
+			}
+			
+			if((double)purchaseTotals.get(i) >= 450 && (double)purchaseTotals.get(i) < 600) {
+		
+				customerRanking = 4;
+				rankings.add(customerRanking);
+				
+			}
+			
+			if((double)purchaseTotals.get(i) >= 600 && (double)purchaseTotals.get(i) < 750) {
+				
+				customerRanking = 5;
+				rankings.add(customerRanking);
+			}
+			
+			if((double)purchaseTotals.get(i) >= 750) {
+	
+				customerRanking = 6;
+				rankings.add(customerRanking);
+			}
+		}
+		
+		//for (int i = 0; i < custArl.size(); i++) {
+			//ratingsTable.put(arg0, arg1)
+		//}
+		
+	}
 
 
 	// Return the table

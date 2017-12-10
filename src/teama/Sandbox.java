@@ -16,8 +16,11 @@ public class Sandbox {
 		 HashTable test = new HashTable();
 
 			Hashtable customerProduct = test.getTable();
-
-			test.printTable(test);
+            test.printTable(test);
+			test.printValues(test);
+            test.printKeys(test);
+			//test.searchCustomer("Nicholas","Herbert");
+            test.searchCustomer( "Kevin","Balko");
 	
 	}
 }

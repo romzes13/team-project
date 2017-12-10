@@ -13,6 +13,7 @@ public class HashTable implements Evaluation {
 	private Hashtable<Customer, LinkedList> customerProduct = new Hashtable();
 	private CustomerArrayList cList;
 	private ProductArrayList pList;
+	
 
 	public HashTable() {
 		cList = new CustomerArrayList();
@@ -23,7 +24,8 @@ public class HashTable implements Evaluation {
 		ArrayList<Product> productArl = pList.getListOfProducts();
 		populateTable(custArl, purchaseHistory);
 
-	} // constructor currently empty
+	} 
+	
 
 	public void populateTable(ArrayList<Customer> custL, ArrayList<LinkedList<Integer>> purHistory) {
 		for (int i = 0; i < custL.size(); i++) {
@@ -61,10 +63,22 @@ public class HashTable implements Evaluation {
 	}
 
 	//TODO Search method
-	public Customer searchCustomer(String name){
-		
-		System.out.println("Looking up Customer from: " + customerProduct.size() + " total customers");
-		return;
+	public void searchCustomer(String firstName, String lastName){
+
+	
+	    System.out.println("Looking up Customer from: " + customerProduct.size() + " total customers");
+		Enumeration<Customer> n = customerProduct.keys();
+		boolean flag = false;
+		while (n.hasMoreElements()) {
+			if(n.nextElement().toString().contains(firstName + ", " + "last name: " + lastName)) {
+				System.out.println("Customer: " + firstName + " " + lastName + " exists in HashTable");
+			    System.out.println("Next Customer Key = " + n.nextElement());
+			    flag = true;
+			}		
+		 
+		}
+		if(flag == false) 
+			System.out.println("There is no record of Customer: " + firstName + " " + lastName);
 		
 	}
 	

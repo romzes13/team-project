@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import teama.arraylist.CustomerArrayList;
+import teama.hashtable.HashTable;
 
 
 /**
@@ -29,13 +30,13 @@ public class MainEvaluation {
 			System.out.println(" 2-- Calculate ratings ");
 			System.out.println(" 3-- Calculate the average rating\n");
 			System.out.println("T -- Customers GeneralTree data structure \n");
-			System.out.println(" 1-- Populate GeneralTree");
-			System.out.println(" 2-- Calculate ratings ");
-			System.out.println(" 3-- Calculate the average rating\n");
+			System.out.println(" 4-- Populate GeneralTree");
+			System.out.println(" 5-- Calculate ratings ");
+			System.out.println(" 6-- Calculate the average rating\n");
 			System.out.println("H -- Customers HashList data structure \n");
-			System.out.println(" 1-- Populate HashList");
-			System.out.println(" 2-- Calculate ratings ");
-			System.out.println(" 3-- Calculate the average rating");
+			System.out.println(" 7-- Populate HashList");
+			System.out.println(" 8-- Calculate ratings ");
+			System.out.println(" 9-- Calculate the average rating");
 			
 			System.out.print("\nEnter your choice and press enter or Q to exit: ");
 			
@@ -54,13 +55,27 @@ public class MainEvaluation {
 			
 			case '1':
 
-				long before = System.currentTimeMillis();
+				long beforeA1 = System.currentTimeMillis();
 				CustomerArrayList caList = new CustomerArrayList();
 				ArrayList<Customer> custListAr = caList.getListOfCustomers();
-				long after = System.currentTimeMillis();
-				System.out.println("Time took to populate " + (after - before) + " milliseconds\n");
+				long afterA1 = System.currentTimeMillis();
+				System.out.println("Time took to populate " + (afterA1 - beforeA1) + " milliseconds\n");
 				System.out.println("\nPress Enter to continue ");
 				String l = getString();
+				
+				break;
+				
+			case '2':
+				
+				long beforeA2 = System.currentTimeMillis();
+				CustomerArrayList caList2 = new CustomerArrayList();
+				ArrayList<Customer> custListAr2 = caList2.getListOfCustomers();
+				caList2.populatePurHistory();
+				caList2.totalSpentPerCustomer(36456);
+				long afterA2 = System.currentTimeMillis();
+				System.out.println("Time took to calculate rating: " + (afterA2 - beforeA2) + " milliseconds\n");
+				System.out.println("\nPress Enter to continue ");
+				String li = getString();
 				
 				break;
 
@@ -74,6 +89,41 @@ public class MainEvaluation {
 			case 'H':
 
 				System.out.println("H" + letter);
+				
+				break;
+				
+				case '7':
+				
+				long beforeH1 = System.currentTimeMillis();
+				HashTable test = new HashTable();
+				long afterH1 = System.currentTimeMillis();
+				System.out.println("Time took to populate Hashtable: " + (afterH1 - beforeH1) + " milliseconds\n");
+				System.out.println("\nPress Enter to continue ");
+				String l1 = getString();
+				
+				break;
+				
+			case '8':
+				HashTable test2 = new HashTable();
+				long beforeH2 = System.currentTimeMillis();
+				 int key = test2.searchCustomer( "Joseph","Dinuzzio");
+		         test2.totalSpentPerCustomer(key);
+		         long afterH2 = System.currentTimeMillis();
+		         System.out.println("Time took to calculate rating: " + (afterH2 - beforeH2) + " milliseconds\n");
+				 System.out.println("\nPress Enter to continue ");
+				 String l2 = getString();
+		          
+				 break;
+				 
+			case '9':
+				
+				long beforeH3 = System.currentTimeMillis();
+				HashTable test3 = new HashTable();
+				test3.populateRatingsTable();
+				long afterH3 = System.currentTimeMillis();
+				System.out.println("Time took to calculate rating: " + (afterH3 - beforeH3) + " milliseconds\n");
+				 System.out.println("\nPress Enter to continue ");
+				 String l3 = getString();
 				
 				break;
 			

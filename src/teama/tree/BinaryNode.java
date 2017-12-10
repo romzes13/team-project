@@ -1,5 +1,7 @@
 package teama.tree;
 
+import teama.Customer;
+
 public class BinaryNode<E, T> implements Parent<E, T>, java.io.Serializable{
 
 /** The item associated with this node. */
@@ -69,12 +71,12 @@ public boolean isLeaf() {
 }
 
 public void setChild(int direction, BinaryNode<E, T> child) {
-	System.out.println("from setChild: " + direction+" child="+ child.toString());
+	//System.out.println("from setChild: " + direction+" child="+ child.toString());
   if (direction < 0) {
-	  System.out.println("set Left");
+	 // System.out.println("set Left");
     left = child;
   } else {
-	  System.out.println("set Right");
+	 // System.out.println("set Right");
     right = child;
   }
 }
@@ -98,6 +100,46 @@ public void setRight(BinaryNode<E, T> right) {
 public String toString() {
 	return "BinaryNode [item=" + item + ", item2=" + item2 + ", left=" + left + ", right=" + right + "]";
 }
+public String toStringPreorder() {
+	String result ="";
+	result +=item;
+	if (left != null) {
+		result += left.toStringPreorder();
+	}
+	if (right != null) {
+		result += right.toStringPreorder();
+	}
+	return result;
+}
 
+public String trPreorder(String lastName, String firstName) {
+	String result ="";
+	//result +=item;
+	//String this.lastName, firstName;
+	
+	if (left != null) {
+		Customer customer;
+		customer = (Customer) left.getItem();
+		
+		if(customer.getLastName().equals(lastName) && customer.getFirstName().equals(firstName)) {
+			result += customer.toString();
+			
+		}
+		result += left.trPreorder(lastName, firstName);
+	}
+	if (right != null) {
+		Customer customer;
+		customer = (Customer) right.getItem();
+		
+		if(customer.getLastName().equals(lastName) && customer.getFirstName().equals(firstName)) {
+			result += customer.toString();
+			
+		}
+		
+		
+		result += right.trPreorder(lastName, firstName);
+	}
+	return result;
+}
 
 }

@@ -14,6 +14,7 @@ public class TestBtree {
 	public TestBtree() {
 		root = null;
 	}
+	//private ArrayList<LinkedList<Integer>> purchaseHistory;
 	
 	
 	public static void main(String[] args) {
@@ -22,16 +23,13 @@ public class TestBtree {
 		Customer customer = new Customer();
 		BinarySearchTree<Customer, LinkedList<Integer>> btree = new BinarySearchTree<>();
 		
-		//btree.add(customer, list);
+		ArrayList<LinkedList<Integer>> purchaseHistory;
 		
-		
-		//BinarySearchTree<Customer, LinkedList> bt = new BinarySearchTree<>();
 		
 		// Initializing arraylist with names and implemented methods
 		CustomerArrayList caList = new CustomerArrayList();
 		// This arrayList has arrayList methods.
 		
-		// Shuffle first
 		
 		ArrayList<Customer> custListAr = caList.getListOfCustomers();
 
@@ -44,7 +42,19 @@ public class TestBtree {
 		long after = System.currentTimeMillis();
 		
 		System.out.println("Time taken to add id: " + (after - before) + " milliseconds\n");
+		// populate purchase history
+		caList.populatePurHistory();
+		// get the LinkedList
+		purchaseHistory = caList.getPurchaseHistory();
+		LinkedList<Integer> ll = new LinkedList<>(); 
+		ll = purchaseHistory.get(22);
+		 
+		 System.out.println(" check element #22: " + custListAr.get(22).toString());
+		 System.out.println(" Purchase history #22: " + ll.toString());
+		 System.out.println(" Total purchase history =" + purchaseHistory.size());
+		 
 		
+		// Shuffle first
 		before = System.currentTimeMillis();
 		Collections.shuffle(custListAr);
 		after = System.currentTimeMillis();
@@ -58,7 +68,8 @@ public class TestBtree {
 		before = System.currentTimeMillis();
 			for(int i=0; i<custListAr.size();i++) {
 			
-				btree.add(custListAr.get(i), list);
+				custListAr.get(i);
+				btree.add(custListAr.get(i), purchaseHistory.get(i));
 			}
 			
 		after = System.currentTimeMillis();
@@ -88,6 +99,8 @@ public class TestBtree {
 		System.out.println("Look up customer: " + btree.preorderLookUpCustomer(lastName, firstName));
 		after = System.currentTimeMillis();
 		System.out.println("Time taken to traverse tree: " + (after - before) + " milliseconds\n");
+		
+		//System.out.println("Customer: " + btree.preorder(lastName, firstName));
 
 	}
 

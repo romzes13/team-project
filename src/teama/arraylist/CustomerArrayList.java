@@ -28,6 +28,8 @@ public class CustomerArrayList implements Evaluation {
 	// ArrayList Customer index.
 
 	private ArrayList<LinkedList<Integer>> purchaseHistory;
+	
+
 	private ArrayList<Product> listOfProducts;
 	private ProductDataFile productDF;
 
@@ -340,6 +342,10 @@ public class CustomerArrayList implements Evaluation {
 	// Getter for listOfCustomers
 	public ArrayList<Customer> getListOfCustomers() {
 		return listOfCustomers;
+	}
+	
+	public ArrayList<LinkedList<Integer>> getPurchaseHistory() {
+		return purchaseHistory;
 	}
 
 	// Added method to Shuffle the list in random order.

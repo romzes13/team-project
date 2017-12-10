@@ -84,7 +84,7 @@ public class Customer implements Comparable<Customer> {
 	 */
 	@Override
 	public int compareTo(Customer customer) {
-		System.out.println("Compare=" + Integer.compare(this.id, customer.id) );
+		//System.out.println("Compare=" + Integer.compare(this.id, customer.id) );
 		return Integer.compare(this.id, customer.id);
 	}
 	

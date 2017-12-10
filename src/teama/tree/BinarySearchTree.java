@@ -36,22 +36,22 @@ public void add(E target, T list) {
  BinaryNode<E, T> node = root;
  int comparison = 0;
  while (node != null) {
-	 System.out.println("While loop:");
+	 //System.out.println("While loop:");
    comparison = target.compareTo(node.getItem());
-   System.out.println("Comparison=" + comparison);
+   //System.out.println("Comparison=" + comparison);
    if (comparison < 0) {     // Go left
-	   System.out.println("Go Left");
+	   //System.out.println("Go Left");
      parent =        node;
      node = node.getLeft();
    } else if (comparison == 0) { // It's already here
      return;
    } else {                  // Go right
-	   System.out.println("Go Right");
+	  // System.out.println("Go Right");
      parent =       node;
      node = node.getRight();
    }
  }
- System.out.println("from add method: " + target +" list=" +list);
+ //System.out.println("from add method: " + target +" list=" +list);
  //BinaryNode<E, T> newNode = new BinaryNode<E, T>(target, list);
  //newNode.setChild(comparison, newNode);
  parent.setChild(comparison, new BinaryNode<E, T>(target, list));
@@ -201,6 +201,34 @@ public double averageRating() {
 public void countAllRatings() {
 	// TODO Auto-generated method stub
 	
+}
+
+/*public String toStringPreorder() {
+	String result = null;
+	Customer item;
+	result += item.getId();
+	Customer left, right;
+	if (left != null) {
+		result += toStringPreorder();
+	}
+	if (right != null) {
+		result += right.toStringPreorder();
+	}
+	return result;
+}*/
+
+public String traversalPreorder() {
+	
+	root.toStringPreorder();
+	return "";
+}
+
+public String preorderLookUpCustomer(String lastName, String firstName) {
+	
+	
+	
+	
+	return root.trPreorder(lastName, firstName);
 }
 
 /**

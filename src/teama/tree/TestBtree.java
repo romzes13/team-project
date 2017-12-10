@@ -59,8 +59,6 @@ public class TestBtree {
 		String firstName = "";
 		btree.lookUpCustomer(lastName, firstName);
 		
-		
-		
 	}
 
 }

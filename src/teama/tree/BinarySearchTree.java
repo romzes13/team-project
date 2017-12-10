@@ -182,7 +182,9 @@ public Customer lookUpCustomer(String lastName, String firstName) {
 @Override
 public int countCustomerRating(String lastName, String firstName) {
 	// TODO Auto-generated method stub
-	return 0;
+	Customer customer = new Customer(lastName, firstName);
+	lookUpCustomer(lastName, firstName);
+	return customer.getRank();
 }
 
 @Override

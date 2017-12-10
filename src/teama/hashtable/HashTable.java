@@ -13,15 +13,18 @@ public class HashTable implements Evaluation {
 	private Hashtable<Customer, LinkedList> customerProduct = new Hashtable();
 	private CustomerArrayList cList;
 	private ProductArrayList pList;
+	private ArrayList<Customer> custArl;
+	private ArrayList<LinkedList<Integer>> purchaseHistory;
+	private ArrayList<Product> productArl;
 	
 
 	public HashTable() {
 		cList = new CustomerArrayList();
-		ArrayList<Customer> custArl = cList.getListOfCustomers();
+		custArl = cList.getListOfCustomers();
 		cList.populatePurHistory();
-		ArrayList<LinkedList<Integer>> purchaseHistory = cList.getPurchaseHistory();
+		purchaseHistory = cList.getPurchaseHistory();
 		pList = new ProductArrayList();
-		ArrayList<Product> productArl = pList.getListOfProducts();
+		productArl = pList.getListOfProducts();
 		populateTable(custArl, purchaseHistory);
 
 	} 
@@ -63,27 +66,31 @@ public class HashTable implements Evaluation {
 	}
 
 	//TODO Search method
-	public void searchCustomer(String firstName, String lastName){
+	public int searchCustomer(String firstName, String lastName){
 
 	
 	    System.out.println("Looking up Customer from: " + customerProduct.size() + " total customers");
+	    int count = 0;
 		Enumeration<Customer> n = customerProduct.keys();
 		boolean flag = false;
 		while (n.hasMoreElements()) {
+			count++;
 			if(n.nextElement().toString().contains(firstName + ", " + "last name: " + lastName)) {
 				System.out.println("Customer: " + firstName + " " + lastName + " exists in HashTable");
 			    System.out.println("Next Customer Key = " + n.nextElement());
 			    flag = true;
+			    break;
 			}		
-		 
+		
 		}
 		if(flag == false) 
 			System.out.println("There is no record of Customer: " + firstName + " " + lastName);
 		
+		return count;  //Return index of where Customer key corresponds to
 	}
 	
 	
-	/*public double totalSpentPerCustomer(int key) {
+	public double totalSpentPerCustomer(int key) {
 			
 			//total spent
 			double total = 0;
@@ -92,19 +99,31 @@ public class HashTable implements Evaluation {
 			LinkedList tempValue = new LinkedList();
 			
 			//Store the searched customers value into this list
-			tempValue = customerProduct.get(key);
+			Customer target = new Customer();
+			target = custArl.get(key);
+	
+			tempValue = customerProduct.get(target);
+			Product tempProduct = new Product();
+		
 			
-			for(int i = 0; i < tempValue.size(); i++) { //error here
+			for(int i = 0; i < tempValue.size(); i++) { //testing the total, keeps giving different sums
 				double tempTotal = 0;
-				tempTotal = (double) tempValue.get(i);
+				int pid = (int) tempValue.get(i);
+				tempProduct = productArl.get(pid);
+				tempTotal = tempProduct.getPrice();
 				total = tempTotal + total;
 				
 			}
+			System.out.println("Total spent for customer at key " + key + " = $" + total);
+			
+	
+
+		   
 			
 			//This is supposed to set the rating for a specific customer however since the Customer is the key,
 			//I don't know how to tap into the key and change the customer ranking. 
 			
-			if(total <=  0) {
+			/*if(total <=  0) {
 				customerProduct;
 				System.out.println("Customer rank is: unranked");
 			}
@@ -139,9 +158,10 @@ public class HashTable implements Evaluation {
 				System.out.println("Customer rank is: level 6, Master rank");
 			}
 				System.out.println("$" + total + " total spent");
-				return total;
+				return total; */
+			return total;
 		
-	} */
+	} 
 
 
 	// Return the table

@@ -124,42 +124,42 @@ public class HashTable implements Evaluation {
 			//This is supposed to set the rating for a specific customer however since the Customer is the key,
 			//I don't know how to tap into the key and change the customer ranking. 
 			
-			/*if(total <=  0) {
-				customerProduct;
+			if(total <=  0) {
+			
 				System.out.println("Customer rank is: unranked");
 			}
 			
 			if(total > 0 && total < 150) {
-				listOfCustomers.get(customer).setRank(1);
+			
 				System.out.println("Customer rank is: level 1");
 			}
 			
 			if(total >= 150 && total < 300) {
-				listOfCustomers.get(customer).setRank(2);
+				
 				System.out.println("Customer rank is: level 2");
 			}
 			
 			if(total >= 300 && total < 450) {
-				listOfCustomers.get(customer).setRank(3);
+
 				System.out.println("Customer rank is: level 3");
 			}
 			
 			if(total >= 450 && total < 600) {
-				listOfCustomers.get(customer).setRank(4);
+		
 				System.out.println("Customer rank is: level 4");
 			}
 			
 			if(total >= 600 && total < 750) {
-				listOfCustomers.get(customer).setRank(5);
+				
 				System.out.println("Customer rank is: level 5");
 			}
 			
 			if(total >= 750) {
-				listOfCustomers.get(customer).setRank(6);
+	
 				System.out.println("Customer rank is: level 6, Master rank");
 			}
 				System.out.println("$" + total + " total spent");
-				return total; */
+		
 			return total;
 		
 	} 

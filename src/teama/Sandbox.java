@@ -10,19 +10,14 @@ import teama.hashtable.HashTable;
  */
 public class Sandbox {
 
-	
 	public static void main(String[] args) {
-		
-		 HashTable test = new HashTable();
 
-			Hashtable customerProduct = test.getTable();
-            test.printTable(test);
-			test.printValues(test);
-            test.printKeys(test);
-            int key = test.searchCustomer( "Joseph","Dinuzzio");
-            test.totalSpentPerCustomer(key);
-            test.populateRatingsTable();
-            
-	
+		long before = System.currentTimeMillis();
+
+		HashTable test = new HashTable();
+		test.populateRatingsTable();
+		
+		long after = System.currentTimeMillis();
+		System.out.println("Time taken: " + (after - before) + " milliseconds");
 	}
 }

@@ -117,8 +117,14 @@ public class MainEvaluation {
 				 
 			case '9':
 				
-				//average rating method test
-
+				long beforeH3 = System.currentTimeMillis();
+				HashTable test3 = new HashTable();
+				test3.populateRatingsTable();
+				long afterH3 = System.currentTimeMillis();
+				System.out.println("Time took to calculate rating: " + (afterH3 - beforeH3) + " milliseconds\n");
+				 System.out.println("\nPress Enter to continue ");
+				 String l3 = getString();
+				
 				break;
 			
 			case 'Q':

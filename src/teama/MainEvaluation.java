@@ -75,14 +75,27 @@ public class MainEvaluation {
 				
 			case '7':
 				
-				long before3 = System.currentTimeMillis();
+				long beforeH1 = System.currentTimeMillis();
 				HashTable test = new HashTable();
-				long after3 = System.currentTimeMillis();
-				System.out.println("Time took to populate Hashtable: " + (after3 - before3) + " milliseconds\n");
+				long afterH1 = System.currentTimeMillis();
+				System.out.println("Time took to populate Hashtable: " + (afterH1 - beforeH1) + " milliseconds\n");
 				System.out.println("\nPress Enter to continue ");
 				String l1 = getString();
 				
-				break; 
+				break;
+				
+			case '8':
+				HashTable test2 = new HashTable();
+				long beforeH2 = System.currentTimeMillis();
+				 int key = test2.searchCustomer( "Joseph","Dinuzzio");
+		         test2.totalSpentPerCustomer(key);
+		         long afterH2 = System.currentTimeMillis();
+		         System.out.println("Time took to populate Hashtable: " + (afterH2 - beforeH2) + " milliseconds\n");
+				 System.out.println("\nPress Enter to continue ");
+				 String l2 = getString();
+		          
+				 break;
+
 
 			case 'Q':
 

@@ -16,8 +16,17 @@ public class Sandbox {
 		 HashTable test = new HashTable();
 
 			Hashtable customerProduct = test.getTable();
+<<<<<<< HEAD
 
 			System.out.println(test.hashCode());
+=======
+            test.printTable(test);
+			test.printValues(test);
+            test.printKeys(test);
+            test.searchCustomer( "Kevin","Balko");
+            test.totalSpentPerCustomer(44031);
+            
+>>>>>>> refs/remotes/origin/master
 	
 	}
 }

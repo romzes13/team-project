@@ -1,6 +1,7 @@
 package teama.tree;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 
 import teama.Customer;
@@ -29,38 +30,65 @@ public class TestBtree {
 		// Initializing arraylist with names and implemented methods
 		CustomerArrayList caList = new CustomerArrayList();
 		// This arrayList has arrayList methods.
+		
+		// Shuffle first
+		
 		ArrayList<Customer> custListAr = caList.getListOfCustomers();
 
+		long before = System.currentTimeMillis();
+		
 		for(int i=0; i<custListAr.size(); i++) {
 			custListAr.get(i).setId(i);
 		}
-		custListAr.get(0).setId(1234);
-		customer = custListAr.get(0);
+		
+		long after = System.currentTimeMillis();
+		
+		System.out.println("Time taken to add id: " + (after - before) + " milliseconds\n");
+		
+		before = System.currentTimeMillis();
+		Collections.shuffle(custListAr);
+		after = System.currentTimeMillis();
+
+		System.out.println("Time taken to shuffle: " + (after - before) + " milliseconds\n");
+		
 		list.add(1234);
 		
-		btree.add(customer, list);
 		
+		// populating the tree
+		before = System.currentTimeMillis();
+			for(int i=0; i<custListAr.size();i++) {
+			
+				btree.add(custListAr.get(i), list);
+			}
+			
+		after = System.currentTimeMillis();
+			System.out.println("Time taken to populate tree: " + (after - before) + " milliseconds\n");
+		
+		
+		
+		
+		customer = custListAr.get(1997);
 		System.out.println("Customer=" + customer);
-		btree.add(custListAr.get(1), list);
-		btree.add(custListAr.get(2), list);
-		btree.add(custListAr.get(3), list);
-		btree.add(custListAr.get(4), list);
-		btree.add(custListAr.get(5), list);
-		btree.add(custListAr.get(6), list);
-		
-		
-		
-		customer = custListAr.get(0);
-		System.out.println("Customer=" + customer);
-		System.out.println(" Btree " + btree.size());
-		//System.out.println(" Btree " + btree.getChild(-1).toString());
+
 		System.out.println(" Btree " + btree.contains(customer));
-		String lastName = "kelly";
-		String firstName = "";
-		btree.lookUpCustomer(lastName, firstName);
 		
 		
-		
+		// Traversal preorder test
+		before = System.currentTimeMillis();
+		System.out.println("Traversal preorder:");
+		btree.traversalPreorder();
+		after = System.currentTimeMillis();
+		System.out.println("Time taken to traverse tree: " + (after - before) + " milliseconds\n");
+
+		// Look up customer test
+		// Returns all customers with the same first and last names
+		String lastName = "abbott";
+		String firstName = "jerry";
+		before = System.currentTimeMillis();
+		System.out.println("Look up customer: " + btree.preorderLookUpCustomer(lastName, firstName));
+		after = System.currentTimeMillis();
+		System.out.println("Time taken to traverse tree: " + (after - before) + " milliseconds\n");
+
 	}
 
 }

@@ -220,6 +220,22 @@ public class HashTable implements Evaluation {
 		}
 		
 	}
+	
+	public int countRatings() {
+		int count = 0;
+		for(int i = 0; i < rankings.size(); i++) {
+			count += ratingsTable.get(custArl.get(i));
+		}
+		System.out.println("Sum of all ratings = " + count);
+		return count;
+	}
+	
+	public double averageRatings(int count) {
+		double average = count/(double)ratingsTable.size();
+		System.out.println("The average of all ratings = " + average);
+		return average;
+	}
+
 
 
 	// Return the table
@@ -248,13 +264,15 @@ public class HashTable implements Evaluation {
 	@Override
 	public double averageRating() {
 		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 
 	@Override
 	public void countAllRatings() {
 		// TODO Auto-generated method stub
-
+	
+        
 	}
 
 	public void printTable(HashTable test) {

@@ -16,17 +16,15 @@ public class Sandbox {
 		 HashTable test = new HashTable();
 
 			Hashtable customerProduct = test.getTable();
-<<<<<<< HEAD
-
-			System.out.println(test.hashCode());
-=======
-            test.printTable(test);
-			test.printValues(test);
-            test.printKeys(test);
-            test.searchCustomer( "Kevin","Balko");
-            test.totalSpentPerCustomer(44031);
             
->>>>>>> refs/remotes/origin/master
-	
+			long before = System.currentTimeMillis();
+			
+            test.searchCustomer( "Simon","Abel");
+            
+            long after = System.currentTimeMillis();
+            System.out.println("Time taken: " + (after - before) + " milliseconds");
+            
+            
+            
 	}
 }

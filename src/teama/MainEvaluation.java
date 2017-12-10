@@ -82,7 +82,7 @@ public class MainEvaluation {
 				System.out.println("\nPress Enter to continue ");
 				String l1 = getString();
 				
-				break;
+				break; 
 
 			case 'Q':
 

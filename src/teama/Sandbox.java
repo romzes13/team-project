@@ -17,7 +17,7 @@ public class Sandbox {
 
 			Hashtable customerProduct = test.getTable();
 
-			test.printTable(test);
+			System.out.println(test.hashCode());
 	
 	}
 }

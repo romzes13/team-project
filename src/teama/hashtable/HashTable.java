@@ -39,7 +39,7 @@ public class HashTable implements Evaluation {
 
 		long before = System.currentTimeMillis();
 
-		Enumeration l = customerProduct.elements();
+		Enumeration<LinkedList> l = customerProduct.elements();
 		while (l.hasMoreElements())
 			System.out.println("$" + l.nextElement());
 
@@ -52,7 +52,7 @@ public class HashTable implements Evaluation {
 
 		long before = System.currentTimeMillis();
 
-		Enumeration k = customerProduct.keys();
+		Enumeration<Customer> k = customerProduct.keys();
 		while (k.hasMoreElements())
 			System.out.println(k.nextElement());
 
@@ -61,10 +61,13 @@ public class HashTable implements Evaluation {
 	}
 
 	//TODO Search method
-	public Customer searchCustomer(String name){
+	public Customer searchKey(Customer customer){
 		
-		System.out.println("Looking up Customer from: " + customerProduct.size() + " total customers");
-		return;
+		if(customerProduct.containsKey(customer.hashCode())) { //Still nope. I feel like we are just using the ArrayList and comparing
+															// it to the HashTable
+			
+			return;
+		}
 		
 	}
 	

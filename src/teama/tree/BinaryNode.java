@@ -114,8 +114,6 @@ public String toStringPreorder() {
 
 public String trPreorder(String lastName, String firstName) {
 	String result ="";
-	//result +=item;
-	//String this.lastName, firstName;
 	
 	if (left != null) {
 		Customer customer;
@@ -139,6 +137,7 @@ public String trPreorder(String lastName, String firstName) {
 		
 		result += right.trPreorder(lastName, firstName);
 	}
+	
 	return result;
 }
 

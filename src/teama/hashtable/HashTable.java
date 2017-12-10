@@ -77,6 +77,7 @@ public class HashTable implements Evaluation {
 			count++;
 			if(n.nextElement().toString().contains(firstName + ", " + "last name: " + lastName)) {
 				System.out.println("Customer: " + firstName + " " + lastName + " exists in HashTable");
+				System.out.println("Customer is located at key: " + count);
 			    System.out.println("Next Customer Key = " + n.nextElement());
 			    flag = true;
 			    break;
@@ -85,7 +86,7 @@ public class HashTable implements Evaluation {
 		}
 		if(flag == false) 
 			System.out.println("There is no record of Customer: " + firstName + " " + lastName);
-		
+	
 		return count;  //Return index of where Customer key corresponds to
 	}
 	

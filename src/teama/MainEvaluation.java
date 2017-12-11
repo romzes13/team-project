@@ -78,6 +78,19 @@ public class MainEvaluation {
 				String li = getString();
 				
 				break;
+				
+			case '3': 
+				long beforeA3 = System.currentTimeMillis();
+				CustomerArrayList caList3 = new CustomerArrayList();
+				ArrayList<Customer> custListAr3 = caList3.getListOfCustomers();
+				caList3.populatePurHistory();
+				caList3.averageRating();
+				long afterA3 = System.currentTimeMillis();
+				System.out.println("Time taken to get average rating: " + (afterA3 - beforeA3) + " milliseconds");
+				System.out.println("\nPress Enter to continue ");
+				String li1 = getString();
+				
+				break;
 
 
 			case 'T':

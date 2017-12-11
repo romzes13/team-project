@@ -7,7 +7,7 @@ import java.util.Set;
 import teama.Customer;
 import teama.Evaluation;
 import teama.Product;
-
+import teama.CustomerArrayList;
 
 /** A binary search tree of Comparables. 
  * TODO Not sure if Set<E> has anything to do here...
@@ -177,9 +177,17 @@ public Customer lookUpCustomer(String lastName, String firstName) {
 @Override
 public int countCustomerRating(String lastName, String firstName) {
 	// TODO Auto-generated method stub
-	//Customer customer = new Customer(lastName, firstName);
-	//lookUpCustomer(customer.getLastName(), customer.getFirstName());
-	//return customer.getRank();
+	// Initialize CustomerArrayList reference
+	CustomerArrayList customerArray = new CustomerArrayList();
+	// Initialize Customer reference
+	Customer customer = new Customer(lastName, firstName);
+	// Find customer by name
+	customer.lookUpCustomer(customer.getLastName(), customer.getFirstName());
+	// Retrieve purhcase history
+	root.getItem2();
+	// TODO: calculate total ints
+	// TODO: calculate rank
+	
 }
 
 @Override

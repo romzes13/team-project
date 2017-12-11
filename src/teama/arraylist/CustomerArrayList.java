@@ -291,15 +291,21 @@ public class CustomerArrayList implements Evaluation {
 	@Override
 	public double averageRating() {
 		
-		
+		//Creates new instance of ProductArrayList, reading in from the .txt file
 		ProductArrayList paList = new ProductArrayList();
 		ArrayList<Product> productList = paList.getListOfProducts();
+		
+		//two variables for calculating average
 		double count = 0;
 		double average = 0;
 
+		//Nested for-loop to cycle through each customer, grab their productHistory, add it, set their ranking and count 
+		//what ranking they are.
+		
 			for(int i = 0; i < listOfCustomers.size(); i++) {
 				double total = 0;
-				LinkedList<Integer> customerList = purchaseHistory.get(i); 
+				LinkedList<Integer> customerList = new LinkedList<Integer>();
+				customerList = purchaseHistory.get(i); 
 				for(int j = 0; i <= customerList.size(); j++) {
 					double tempTotal = 0;
 					int pid = customerList.get(j);
@@ -348,6 +354,9 @@ public class CustomerArrayList implements Evaluation {
 				
 				
 			} 
+			
+			//Calculate the average based off the count added and the total amount of customers. 
+			
 		average = count / listOfCustomers.size();
 		System.out.println("The average ranking is: " + average);
 		return average;

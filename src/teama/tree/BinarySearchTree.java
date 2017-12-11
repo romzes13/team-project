@@ -7,7 +7,7 @@ import java.util.Set;
 import teama.Customer;
 import teama.Evaluation;
 import teama.Product;
-
+import teama.CustomerArrayList;
 
 /** A binary search tree of Comparables. 
  * TODO Not sure if Set<E> has anything to do here...
@@ -22,38 +22,37 @@ public class BinarySearchTree <E extends Comparable<E>, T> implements Parent<E, 
 private BinaryNode<E, T> root;
 private Parent<E, T> parent;
 
+/** The node at the root of the left subtree. */
+private BinaryNode<E, T> left;
+
+/** The node at the root of the right subtree. */
+private BinaryNode<E, T> right;
+
 /** A BinarySearchTree is initially empty. */
 public BinarySearchTree() {
  root = null;
- //parent = null;
 }
 
 public void add(E target, T list) {
-	//BinaryNode<E, T> parent =  new BinaryNode<>() ;
+	
 	 parent = this;
-	//Parent<E, T> parent =  new BinaryNode();
 	
  BinaryNode<E, T> node = root;
  int comparison = 0;
  while (node != null) {
-	 System.out.println("While loop:");
+	
    comparison = target.compareTo(node.getItem());
-   System.out.println("Comparison=" + comparison);
-   if (comparison < 0) {     // Go left
-	   System.out.println("Go Left");
+  
+   if (comparison < 0) {     // Go left	 
      parent =        node;
      node = node.getLeft();
    } else if (comparison == 0) { // It's already here
      return;
    } else {                  // Go right
-	   System.out.println("Go Right");
      parent =       node;
      node = node.getRight();
    }
  }
- System.out.println("from add method: " + target +" list=" +list);
- //BinaryNode<E, T> newNode = new BinaryNode<E, T>(target, list);
- //newNode.setChild(comparison, newNode);
  parent.setChild(comparison, new BinaryNode<E, T>(target, list));
  
 }
@@ -156,11 +155,7 @@ protected void spliceOut(BinaryNode<E, T> node,
 
 @Override
 public Customer lookUpCustomer(String lastName, String firstName) {
-	Customer customer = new Customer(firstName, lastName);
-	
-	//BinaryNode<E, T> node = root;
-	//node.setItem(customer);
-	
+	Customer customer = new Customer(firstName, lastName);	
 	
 	BinaryNode<E, T> node = root;
 	 while (node != null) {
@@ -182,9 +177,18 @@ public Customer lookUpCustomer(String lastName, String firstName) {
 @Override
 public int countCustomerRating(String lastName, String firstName) {
 	// TODO Auto-generated method stub
+
+	// Initialize CustomerArrayList reference
+	CustomerArrayList customerArray = new CustomerArrayList();
+	// Initialize Customer reference
 	Customer customer = new Customer(lastName, firstName);
-	lookUpCustomer(customer.getLastName(), customer.getFirstName());
-	return customer.getRank();
+	// Find customer by name
+	customer.lookUpCustomer(customer.getLastName(), customer.getFirstName());
+	// Retrieve purhcase history
+	root.getItem2();
+	// TODO: calculate total ints
+	// TODO: calculate rank
+	
 }
 
 @Override
@@ -193,16 +197,78 @@ public Product lookUpProduct(String name) {
 	return null;
 }
 
-@Override
-public double averageRating() {
+@Overload
+public double averageRating(int ratings, int treeSize) {
 	// TODO Auto-generated method stub
-	return 0;
+	// Divide ratings by number of customers
+	double average = ratings/treeSize;
+	return average;
 }
 
 @Override
 public void countAllRatings() {
-	// TODO Auto-generated method stub
+	String result ="";
+	//result +=item;
+	Customer customer;
+	int rank =0;
 	
+	if (left != null) {
+		this.countAllRatings();
+		//result += left.toStringPreorder();
+		//customer.setRank(rank);
+	}
+	if (right != null) {
+		result += right.toStringPreorder();
+	}
+	//return result;
+	
+}
+
+
+public String traversalPreorder() {
+	
+	root.toStringPreorder();
+	return "";
+}
+
+public String preorderLookUpCustomer(String lastName, String firstName) {
+	
+	return root.trPreorder(lastName, firstName);
+}
+
+/**
+ * Duplicate method and needs some work.
+ * @param lastName
+ * @param firstName
+ * @return
+ */
+public String preorder(String lastName, String firstName) {
+	String result ="";
+	
+	if (left != null) {
+		Customer customer;
+		customer = (Customer) left.getItem();
+		
+		if(customer.getLastName().equals(lastName) && customer.getFirstName().equals(firstName)) {
+			result += customer.toString();
+			
+		}
+		result += left.trPreorder(lastName, firstName);
+	}
+	if (right != null) {
+		Customer customer;
+		customer = (Customer) right.getItem();
+		
+		if(customer.getLastName().equals(lastName) && customer.getFirstName().equals(firstName)) {
+			result += customer.toString();			
+		}
+	
+		result += right.trPreorder(lastName, firstName);
+	}
+	if (result.equals("")){
+		return "Customer not found!";
+	}
+	return result;
 }
 
 /**

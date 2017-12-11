@@ -7,8 +7,9 @@ import java.util.ArrayList;
 
 import teama.arraylist.CustomerArrayList;
 import teama.hashtable.HashTable;
+
 import teama.tree.BinarySearchTree;
-import teama.tree.TestBtree;
+
 
 
 /**
@@ -61,7 +62,9 @@ public class MainEvaluation {
 				CustomerArrayList caList = new CustomerArrayList();
 				ArrayList<Customer> custListAr = caList.getListOfCustomers();
 				long afterA1 = System.currentTimeMillis();
+
 				System.out.println("Time taken to populate " + (afterA1 - beforeA1) + " milliseconds\n");
+
 				System.out.println("\nPress Enter to continue ");
 				String l = getString();
 				
@@ -75,7 +78,9 @@ public class MainEvaluation {
 				caList2.populatePurHistory();
 				caList2.totalSpentPerCustomer(36456);
 				long afterA2 = System.currentTimeMillis();
+
 				System.out.println("Time taken to calculate rating: " + (afterA2 - beforeA2) + " milliseconds\n");
+
 				System.out.println("\nPress Enter to continue ");
 				String li = getString();
 				
@@ -139,7 +144,9 @@ public class MainEvaluation {
 				long beforeH1 = System.currentTimeMillis();
 				HashTable test = new HashTable();
 				long afterH1 = System.currentTimeMillis();
+
 				System.out.println("Time taken to populate Hashtable: " + (afterH1 - beforeH1) + " milliseconds\n");
+
 				System.out.println("\nPress Enter to continue ");
 				String l1 = getString();
 				
@@ -151,7 +158,9 @@ public class MainEvaluation {
 				 int key = test2.searchCustomer( "Joseph","Dinuzzio");
 		         test2.totalSpentPerCustomer(key);
 		         long afterH2 = System.currentTimeMillis();
+
 		         System.out.println("Time taken to calculate rating: " + (afterH2 - beforeH2) + " milliseconds\n");
+
 				 System.out.println("\nPress Enter to continue ");
 				 String l2 = getString();
 		          
@@ -165,7 +174,9 @@ public class MainEvaluation {
 				int count = test3.countRatings();
 				test3.averageRatings(count);
 				long afterH3 = System.currentTimeMillis();
+
 				System.out.println("Time taken to get average rating: " + (afterH3 - beforeH3) + " milliseconds\n");
+
 				 System.out.println("\nPress Enter to continue ");
 				 String l3 = getString();
 				

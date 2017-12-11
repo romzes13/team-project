@@ -13,11 +13,15 @@ public class Sandbox {
 	
 	public static void main(String[] args) {
 		
-		 HashTable test = new HashTable();
-
-			Hashtable customerProduct = test.getTable();
-
-			test.printTable(test);
+		long before = System.currentTimeMillis();
+		
+		CustomerArrayList test = new CustomerArrayList();
+		test.populatePurHistory();
+		test.averageRating();
+		
+		long after = System.currentTimeMillis();
+		System.out.println("Time taken: " + (after - before) + " milliseconds");
+            
 	
 	}
 }

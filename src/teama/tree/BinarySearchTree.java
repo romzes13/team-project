@@ -177,9 +177,9 @@ public Customer lookUpCustomer(String lastName, String firstName) {
 @Override
 public int countCustomerRating(String lastName, String firstName) {
 	// TODO Auto-generated method stub
-	Customer customer = new Customer(lastName, firstName);
-	lookUpCustomer(customer.getLastName(), customer.getFirstName());
-	return customer.getRank();
+	//Customer customer = new Customer(lastName, firstName);
+	//lookUpCustomer(customer.getLastName(), customer.getFirstName());
+	//return customer.getRank();
 }
 
 @Override
@@ -188,11 +188,12 @@ public Product lookUpProduct(String name) {
 	return null;
 }
 
-@Override
-public double averageRating() {
+@Overload
+public double averageRating(int ratings, int treeSize) {
 	// TODO Auto-generated method stub
 	// Divide ratings by number of customers
-	double average = countAllRatings()//number of customers
+	double average = ratings/treeSize;
+	return average;
 }
 
 @Override

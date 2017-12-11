@@ -177,6 +177,7 @@ public Customer lookUpCustomer(String lastName, String firstName) {
 @Override
 public int countCustomerRating(String lastName, String firstName) {
 	// TODO Auto-generated method stub
+
 	// Initialize CustomerArrayList reference
 	CustomerArrayList customerArray = new CustomerArrayList();
 	// Initialize Customer reference

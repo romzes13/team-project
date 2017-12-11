@@ -109,7 +109,7 @@ public class CustomerArrayList implements Evaluation {
 		double total = 0;
 
 		//Trying to get to the specified linkedlist to iterate through it
-		LinkedList<Integer> customerList = purchaseHistory.get(customer); //So far problem is here, initializing it wrong.
+		LinkedList<Integer> customerList = purchaseHistory.get(customer); 
 
 		//The linkedlist contains references to the products in our ProductArrayList.
 		ProductArrayList paList = new ProductArrayList();
@@ -290,17 +290,67 @@ public class CustomerArrayList implements Evaluation {
 	 */
 	@Override
 	public double averageRating() {
-		int total = 0;
+		
+		
+		ProductArrayList paList = new ProductArrayList();
+		ArrayList<Product> productList = paList.getListOfProducts();
+		double count = 0;
+		double average = 0;
 
-		for(Customer c : listOfCustomers) 
-		{
-			total += c.getRank();
-			//total = total + c.getRank();
-		}
-		
-		System.out.println("Printing from average, total=" +total);
-		
-		return total/listOfCustomers.size();
+			for(int i = 0; i < listOfCustomers.size(); i++) {
+				double total = 0;
+				LinkedList<Integer> customerList = purchaseHistory.get(i); 
+				for(int j = 0; i <= customerList.size(); j++) {
+					double tempTotal = 0;
+					int pid = customerList.get(j);
+					Product tempProduct = productList.get(pid);
+					tempTotal = tempProduct.getPrice();
+
+					total = tempTotal + total;
+					
+					if(total <=  0) {
+						listOfCustomers.get(i).setRank(0);
+						count = count + 0;
+					}
+					
+					if(total > 0 && total < 150) {
+						listOfCustomers.get(i).setRank(1);
+						count = count + 1;
+					}
+					
+					if(total >= 150 && total < 300) {
+						listOfCustomers.get(i).setRank(2);
+						count = count + 2;
+					}
+					
+					if(total >= 300 && total < 450) {
+						listOfCustomers.get(i).setRank(3);
+						count = count + 3;
+					}
+					
+					if(total >= 450 && total < 600) {
+						listOfCustomers.get(i).setRank(4);
+						count = count + 4;
+					}
+					
+					if(total >= 600 && total < 750) {
+						listOfCustomers.get(i).setRank(5);
+						count = count + 5;
+					}
+					
+					if(total >= 750) {
+						listOfCustomers.get(i).setRank(6);
+						count = count + 6;
+					}
+					
+					
+				}
+				
+				
+			} 
+		average = count / listOfCustomers.size();
+		System.out.println("The average ranking is: " + average);
+		return average;
 	}
 
 	

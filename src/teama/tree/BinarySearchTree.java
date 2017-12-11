@@ -183,7 +183,7 @@ public Customer lookUpCustomer(String lastName, String firstName) {
 public int countCustomerRating(String lastName, String firstName) {
 	// TODO Auto-generated method stub
 	Customer customer = new Customer(lastName, firstName);
-	lookUpCustomer(lastName, firstName);
+	lookUpCustomer(customer.getLastName(), customer.getFirstName());
 	return customer.getRank();
 }
 

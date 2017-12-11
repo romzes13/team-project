@@ -120,6 +120,8 @@ public class MainEvaluation {
 				long beforeH3 = System.currentTimeMillis();
 				HashTable test3 = new HashTable();
 				test3.populateRatingsTable();
+				int count = test3.countRatings();
+				test3.averageRatings(count);
 				long afterH3 = System.currentTimeMillis();
 				System.out.println("Time took to calculate rating: " + (afterH3 - beforeH3) + " milliseconds\n");
 				 System.out.println("\nPress Enter to continue ");

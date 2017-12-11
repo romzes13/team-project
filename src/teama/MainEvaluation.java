@@ -92,7 +92,7 @@ public class MainEvaluation {
 				
 				break;
 				
-				case '7':
+			case '7':
 				
 				long beforeH1 = System.currentTimeMillis();
 				HashTable test = new HashTable();

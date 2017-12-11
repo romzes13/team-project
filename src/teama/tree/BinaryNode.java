@@ -138,6 +138,7 @@ public String trPreorder(String lastName, String firstName) {
 	
 	return result;
 }
+<<<<<<< HEAD
 
 
 /**
@@ -178,5 +179,7 @@ public Customer lookUpCustomer(String lastName, String firstName) {
 
     return foundCustomer;
 }
+=======
+>>>>>>> branch 'Daniel' of https://github.com/romzes13/team-project.git
 
 }

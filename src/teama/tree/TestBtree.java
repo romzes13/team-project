@@ -101,6 +101,13 @@ public class TestBtree {
 		System.out.println("Time taken to traverse tree: " + (after - before) + " milliseconds\n");
 		
 		//System.out.println("Customer: " + btree.preorder(lastName, firstName));
+		
+		/*
+		* Average of customer ratings
+		*/
+		int ratings = btree.countAllRatings();
+		int size = btree.size();
+		System.out.println(btree.averageRatings(ratings, size));
 
 	}
 

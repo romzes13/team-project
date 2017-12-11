@@ -88,11 +88,13 @@ public class CustomerArrayList implements Evaluation {
 
 	}
 
+
 	public ArrayList<LinkedList<Integer>> getPurchaseHistory() {
 
 		return purchaseHistory;
 
 	}
+
 
 	/*
 	 * Calculating the total money spent for the specified linkedlist. We want to go

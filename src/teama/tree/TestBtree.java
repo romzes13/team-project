@@ -1,4 +1,4 @@
-package teama.tree;
+package team_project;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -83,7 +83,6 @@ public class TestBtree {
 
 		System.out.println(" Btree " + btree.contains(customer));
 		
-<<<<<<< HEAD
 		
 		// Traversal preorder test
 /*		before = System.currentTimeMillis();
@@ -121,34 +120,6 @@ public class TestBtree {
 	
 		System.out.println("Customer: " + btree.lookUpCustomer("youngblood", "john").getRank());
 		
-=======
-
-		
-		// Traversal preorder test
-		before = System.currentTimeMillis();
-		System.out.println("Traversal preorder:");
-		btree.traversalPreorder();
-		after = System.currentTimeMillis();
-		System.out.println("Time taken to traverse tree: " + (after - before) + " milliseconds\n");
-
-		// Look up customer test
-		// Returns all customers with the same first and last names
-		String lastName = "abbott";
-		String firstName = "jerry";
-		before = System.currentTimeMillis();
-		System.out.println("Look up customer: " + btree.preorderLookUpCustomer(lastName, firstName));
-		after = System.currentTimeMillis();
-		System.out.println("Time taken to traverse tree: " + (after - before) + " milliseconds\n");
-		
-		//System.out.println("Customer: " + btree.preorder(lastName, firstName));
-		
-		/*
-		* Average of customer ratings
-		*/
-		int ratings = btree.countAllRatings();
-		int size = btree.size();
-		System.out.println(btree.averageRatings(ratings, size));
->>>>>>> branch 'Daniel' of https://github.com/romzes13/team-project.git
 
 	}
 

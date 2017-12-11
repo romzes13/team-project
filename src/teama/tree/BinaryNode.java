@@ -42,10 +42,8 @@ public void setItem2(T item2) {
 }
 public BinaryNode<E, T> getChild(int direction) {
   if (direction < 0) {
-	  System.out.println("Left");
     return left;
   } else {
-	  System.out.println("Right");
     return right;
   }
 }
@@ -140,5 +138,48 @@ public String trPreorder(String lastName, String firstName) {
 	
 	return result;
 }
+<<<<<<< HEAD
+
+
+/**
+ * Working look up method.
+ * 
+ * @param lastName Last name
+ * @param firstName First name
+ * @return Customer object if found one or null otherwise.
+ */
+public Customer lookUpCustomer(String lastName, String firstName) {
+
+    Customer customer;
+    Customer foundCustomer = null;
+
+    if (left != null) {
+
+        customer = (Customer) left.getItem();
+
+        if(customer.getLastName().equals(lastName) && customer.getFirstName().equals(firstName)) {
+            System.out.println("Found customer: " + customer.toString());
+            return customer;
+            //foundCustomer = customer;             
+        }
+        foundCustomer = left.lookUpCustomer(lastName, firstName);
+    }
+    if (foundCustomer==null && right != null) {
+
+        customer = (Customer) right.getItem();
+
+        if(customer.getLastName().equals(lastName) && 
+       customer.getFirstName().equals(firstName)) {
+            System.out.println("Found customer: " + customer.toString());
+            return customer;
+            //foundCustomer = customer;         
+        }   
+        foundCustomer  = right.lookUpCustomer(lastName, firstName);
+    }
+
+    return foundCustomer;
+}
+=======
+>>>>>>> branch 'Daniel' of https://github.com/romzes13/team-project.git
 
 }

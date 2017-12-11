@@ -83,6 +83,45 @@ public class TestBtree {
 
 		System.out.println(" Btree " + btree.contains(customer));
 		
+<<<<<<< HEAD
+		
+		// Traversal preorder test
+/*		before = System.currentTimeMillis();
+		System.out.println("Traversal preorder:");
+		btree.traversalPreorder();
+		after = System.currentTimeMillis();
+		System.out.println("Time taken to traverse tree: " + (after - before) + " milliseconds\n");*/
+
+		// Look up customer test
+		// Returns all customers with the same first and last names
+		String lastName = "marquardt";
+		String firstName = "michael";
+		
+
+		// TODO fix return null
+		before = System.currentTimeMillis();
+		System.out.println("Customer: " + btree.lookUpCustomer(lastName, firstName));
+		after = System.currentTimeMillis();
+		System.out.println("Time taken to look up customer: " + (after - before) + " milliseconds\n");
+		
+		
+		System.out.println("\n=============================================================\n");
+		System.out.println("Set ratings: ");
+		// count all ratings
+		btree.countAllRatings();
+		
+		System.out.println("Customer: " + btree.lookUpCustomer(lastName, firstName).getRank());
+		System.out.println("Customer: " + btree.lookUpCustomer("abbott", "erik").getRank());
+		System.out.println("Customer: " + btree.lookUpCustomer("youngblood", "john").getRank());
+		
+		System.out.println("Average rating =" + btree.averageRating());
+		
+
+		System.out.println("Customer rating =" + btree.countCustomerRating("youngblood", "john"));
+	
+		System.out.println("Customer: " + btree.lookUpCustomer("youngblood", "john").getRank());
+		
+=======
 
 		
 		// Traversal preorder test
@@ -109,6 +148,7 @@ public class TestBtree {
 		int ratings = btree.countAllRatings();
 		int size = btree.size();
 		System.out.println(btree.averageRatings(ratings, size));
+>>>>>>> branch 'Daniel' of https://github.com/romzes13/team-project.git
 
 	}
 

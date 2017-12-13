@@ -62,7 +62,7 @@ public class Tree implements Evaluation {
 	 * @param name
 	 * @return Customer information.
 	 */
-	public Customer lookUpCustomer(int id, String lastName, String firstName) {
+	/*public Customer lookUpCustomer(int id, String lastName, String firstName) {
 		Node current = root;
         	while(current.id != id) {
 		    if(id < current.id) {
@@ -99,7 +99,7 @@ public class Tree implements Evaluation {
 			return null;
 		}
 		return current;
-    }
+    }*/
 	
 	/**
 	 * Calculates customer rating by provided name.

@@ -138,7 +138,7 @@ public String trPreorder(String lastName, String firstName) {
 	
 	return result;
 }
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
 
 /**
@@ -148,7 +148,7 @@ public String trPreorder(String lastName, String firstName) {
  * @param firstName First name
  * @return Customer object if found one or null otherwise.
  */
-public Customer lookUpCustomer(String lastName, String firstName) {
+/*public Customer lookUpCustomer(String lastName, String firstName) {
 
     Customer customer;
     Customer foundCustomer = null;
@@ -178,9 +178,9 @@ public Customer lookUpCustomer(String lastName, String firstName) {
     }
 
     return foundCustomer;
-}
-=======
->>>>>>> branch 'Daniel' of https://github.com/romzes13/team-project.git
+}*/
+//=======
+//>>>>>>> branch 'Daniel' of https://github.com/romzes13/team-project.git
 
 
 /**

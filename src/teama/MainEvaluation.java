@@ -4,11 +4,14 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import teama.arraylist.CustomerArrayList;
 import teama.hashtable.HashTable;
-
+import teama.tree.BinaryNode;
 import teama.tree.BinarySearchTree;
+
+
 
 
 
@@ -19,6 +22,8 @@ import teama.tree.BinarySearchTree;
  *
  */
 public class MainEvaluation {
+
+
 
 	
 	public static void main(String[] args) throws IOException {
@@ -61,6 +66,7 @@ public class MainEvaluation {
 				long beforeA1 = System.currentTimeMillis();
 				CustomerArrayList caList = new CustomerArrayList();
 				ArrayList<Customer> custListAr = caList.getListOfCustomers();
+				caList.populatePurHistory();
 				long afterA1 = System.currentTimeMillis();
 
 				System.out.println("Time taken to populate " + (afterA1 - beforeA1) + " milliseconds\n");
@@ -87,6 +93,7 @@ public class MainEvaluation {
 				break;
 				
 			case '3': 
+				
 				long beforeA3 = System.currentTimeMillis();
 				CustomerArrayList caList3 = new CustomerArrayList();
 				ArrayList<Customer> custListAr3 = caList3.getListOfCustomers();
@@ -107,31 +114,84 @@ public class MainEvaluation {
 				break;
 				
 			case '4':
+				
 				long beforeT1 = System.currentTimeMillis();
-				TestBtree btree1 = new TestBtree();
-				main(args);
+				//TestBtree btree1 = new TestBtree();
+				//btree1.main(args);
+				CustomerArrayList caList4 = new CustomerArrayList();
+				ArrayList<Customer> custListAr4 = caList4.getListOfCustomers();
+				ArrayList<LinkedList<Integer>> purchaseHistory = new ArrayList();
+			    BinarySearchTree btree1 = new BinarySearchTree();
+			    for(int i=0; i<custListAr4.size(); i++) {
+					custListAr4.get(i).setId(i);
+				}
+				purchaseHistory = btree1.getPurchaseHistory();
+			
+				for(int i = 0; i < custListAr4.size(); i++) {
+		
+					btree1.add(custListAr4.get(i), purchaseHistory.get(i));
+					
+				}
 				long afterT1 = System.currentTimeMillis();
 				System.out.println("Time taken to populate " + (afterT1 - beforeT1) + " milliseconds\n");
 				System.out.println("\nPress Enter to continue ");
 				String input1 = getString();
 				
+				break;
+				
 			case '5':
+				
 				long beforeT2 = System.currentTimeMillis();
+				CustomerArrayList caList5 = new CustomerArrayList();
+				ArrayList<Customer> custListAr5 = caList5.getListOfCustomers();
+				ArrayList<LinkedList<Integer>> purchaseHistory2 = new ArrayList();
 				BinarySearchTree btree2 = new BinarySearchTree();
-				btree2.countCustomerRating("Gonzalez", "Ricky");
+				for(int i=0; i<custListAr5.size(); i++) {
+					custListAr5.get(i).setId(i);
+				}
+				purchaseHistory2 = btree2.getPurchaseHistory();
+				
+				for(int i = 0; i < custListAr5.size(); i++) {
+					
+					btree2.add(custListAr5.get(i), purchaseHistory2.get(i));
+					
+				}
+				btree2.countAllRatings();
+				System.out.println("Customer rating =" + btree2.countCustomerRating("dinuzzio", "joseph"));
 				long afterT2 = System.currentTimeMillis();
 				System.out.println("Time taken to calculate rating: " + (afterT2 - beforeT2) + " milliseconds\n");
 				System.out.println("\nPress Enter to continue ");
 				String input2 = getString();
 				
+				break;
+				
 			case '6':
+				
 				long beforeT3 = System.currentTimeMillis();
+
+				CustomerArrayList caList6 = new CustomerArrayList();
+				ArrayList<Customer> custListAr6 = caList6.getListOfCustomers();
+				ArrayList<LinkedList<Integer>> purchaseHistory3 = new ArrayList();
 				BinarySearchTree btree3 = new BinarySearchTree();
-				btree3.averageRating();
+				for(int i=0; i<custListAr6.size(); i++) {
+					custListAr6.get(i).setId(i);
+				}
+				purchaseHistory3 = btree3.getPurchaseHistory();
+		
+				for(int i = 0; i < custListAr6.size(); i++) {
+			
+					btree3.add(custListAr6.get(i), purchaseHistory3.get(i));
+		
+				}
+		
+				btree3.countAllRatings();
+				System.out.print("Average of all ratings: " + btree3.averageRating());
 				long afterT3 = System.currentTimeMillis();
 				System.out.println("Time taken to get average rating: " + (afterT3 - beforeT3) + " milliseconds");
 				System.out.println("\nPress Enter to continue ");
 				String input3 = getString();
+				
+				break;
 				
 			case 'H':
 
@@ -153,18 +213,19 @@ public class MainEvaluation {
 				break;
 				
 			case '8':
-				HashTable test2 = new HashTable();
+	
 				long beforeH2 = System.currentTimeMillis();
-				 int key = test2.searchCustomer( "Joseph","Dinuzzio");
-		         test2.totalSpentPerCustomer(key);
-		         long afterH2 = System.currentTimeMillis();
+				HashTable test2 = new HashTable();
+				int key = test2.searchCustomer( "Joseph","Dinuzzio");
+		        test2.totalSpentPerCustomer(key);
+		        long afterH2 = System.currentTimeMillis();
 
-		         System.out.println("Time taken to calculate rating: " + (afterH2 - beforeH2) + " milliseconds\n");
+		        System.out.println("Time taken to calculate rating: " + (afterH2 - beforeH2) + " milliseconds\n");
 
-				 System.out.println("\nPress Enter to continue ");
-				 String l2 = getString();
+				System.out.println("\nPress Enter to continue ");
+				String l2 = getString();
 		          
-				 break;
+				break;
 				 
 			case '9':
 				
@@ -177,8 +238,8 @@ public class MainEvaluation {
 
 				System.out.println("Time taken to get average rating: " + (afterH3 - beforeH3) + " milliseconds\n");
 
-				 System.out.println("\nPress Enter to continue ");
-				 String l3 = getString();
+				System.out.println("\nPress Enter to continue ");
+				String l3 = getString();
 				
 				break;
 			
